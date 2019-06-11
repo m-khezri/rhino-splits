@@ -1,14 +1,14 @@
 {
   "transaction1": {
     "fid": "01",
-    "uid": "xxxx",
+    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
     "date": "03/05/2019",
     "subject": "payment for hockey ticket",
     "amount": "20"
   },
   "transaction2": {
     "fid": "01",
-    "uid": "xxxx",
+    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
     "date": "03/05/2019",
     "subject": "payment for hockey ticket",
     "amount": "20"
