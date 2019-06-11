@@ -1,0 +1,16 @@
+{
+  "friend1": {
+    "uid": "xxxxxxxxxxxx",
+    "name": "Sara",
+    "lastname": "Smith",
+    "phone": "615000123",
+    "email": "sara@email.com"
+  },
+  "friend2": {
+    "uid": "xxxxxxxxxxx",
+    "name": "Mark",
+    "lastname": "Johnson",
+    "phone": "815000124",
+    "email": "mark@email.com"
+  }
+}
