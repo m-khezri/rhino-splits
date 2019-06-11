@@ -1,11 +1,58 @@
-import React from 'react';
-import './App.scss';
+import React, { Component } from 'react';
+import '../App/App.scss';
+import firebase from 'firebase/app';
+import connection from '../helpers/data/connection';
+import Auth from '../components/Auth/Auth';
+import MyNavbar from '../components/MyNavar/MyNavbar';
+import authRequests from '../helpers/data/authRequests';
 
-class App extends React.Component {
+class App extends Component {
+  state = {
+    authed: false,
+  }
+
+  componentDidMount() {
+
+    connection();
+    this.removeListener = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({
+          authed: true,
+        });
+      } else {
+        this.setState({
+          authed: false,
+        });
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    this.removeListener();
+  }
+
+  isAuthenticated = () => {
+    this.setState({ authed: true });
+  }
+
   render() {
+    const logoutClickEvent = () => {
+      authRequests.logoutUser();
+      this.setState({ authed: false });
+    };
+
+    if (!this.state.authed) {
+
+      return (
+        <div className="App">
+          <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
+          <Auth isAuthenticated={this.isAuthenticated} />
+        </div>
+      );
+    }
     return (
-      <div className='App text-center'>
-        <h1 className="m-5 bg-dark p-4">Setup React</h1>
+      <div className="App">
+        <MyNavbar isAuthed={this.state.authed} photoURL={this.state.authed} logoutClickEvent={logoutClickEvent} />
 
       </div>
     );
@@ -13,4 +60,3 @@ class App extends React.Component {
 }
 
 export default App;
-
