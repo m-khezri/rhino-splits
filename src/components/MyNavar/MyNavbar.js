@@ -18,7 +18,7 @@ class MyNavbar extends React.Component {
   render() {
     const { isAuthed, logoutClickEvent } = this.props;
     return (
-      <div>
+      <div className="navbar-container">
         <nav className="navbar navbar-expand-lg">
           <a className="navbar-brand" href="#">Rhino Splits</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
