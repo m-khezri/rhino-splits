@@ -20,7 +20,7 @@ class MyNavbar extends React.Component {
     return (
       <div className="navbar-container">
         <nav className="navbar navbar-expand-lg">
-          <a className="navbar-brand" href="#">Rhino Splits</a>
+          <a className="navbar-brand" href="http://localhost:3000/">Rhino Splits</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -29,8 +29,9 @@ class MyNavbar extends React.Component {
             <ul className="navbar-nav ml-auto">
 
               <li className="nav-item">
-                {isAuthed ?
-                  <a className='nav-link' href='#' onClick={logoutClickEvent}>Logout</a>
+                {isAuthed
+                  ?
+                  <a className='nav-link' href='#http://localhost:3000/' onClick={logoutClickEvent}>Logout</a>
                   :
                   <li>
                     <button className="btn btn-light" onClick={this.authenticateUser}>Login</button>
@@ -46,4 +47,3 @@ class MyNavbar extends React.Component {
 }
 
 export default MyNavbar;
-
