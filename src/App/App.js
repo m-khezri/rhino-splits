@@ -5,6 +5,10 @@ import connection from '../helpers/data/connection';
 import MyNavbar from '../components/MyNavar/MyNavbar';
 import authRequests from '../helpers/data/authRequests';
 
+import ControlBar from '../components/ControlBar/ControlBar';
+import TransactionHistroy from '../components/TransactionsHistory/TransactionsHistory';
+import ContactsList from '../components/ContactsList/ContactsList';
+
 class App extends Component {
   state = {
     authed: false,
@@ -47,7 +51,6 @@ class App extends Component {
       return (
         <div className="App">
           <MyNavbar isAuthed={this.state.authed} isAuthenticated={this.isAuthenticated} logoutClickEvent={logoutClickEvent} />
-
         </div>
       );
     }
@@ -56,6 +59,13 @@ class App extends Component {
         <MyNavbar
           isAuthed={this.state.authed}
           logoutClickEvent={logoutClickEvent} />
+        <div className="components-container d-flex flex-wrap">
+          <TransactionHistroy />
+          <div className='right-components-cont d-flex flex-column flex-wrap bg-secondary'>
+            <ControlBar />
+            <ContactsList />
+          </div>
+        </div>
 
       </div>
     );
