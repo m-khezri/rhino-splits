@@ -1,109 +1,107 @@
 {
-  "friends": {
-    "friend0": {
-      "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
-      "name": "Robert",
-      "lastname": "Smith",
-      "phone": "615000123",
-      "email": "sara@email.com"
-    },
-    "friend1": {
-      "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
-      "name": "Neil",
-      "lastname": "James",
-      "phone": "815000124",
-      "email": "mark@email.com"
-    },
-    "friend2": {
-      "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
-      "name": "Ali",
-      "lastname": "Gomez",
-      "phone": "8150002564",
-      "email": "gomez@email.com"
-    },
-    "friend3": {
-      "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
-      "name": "Sam",
-      "lastname": "Hart",
-      "phone": "715000124",
-      "email": "sam@email.com"
-    },
-    "friend4": {
-      "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
-      "name": "Eddie",
-      "lastname": "Johnson",
-      "phone": "815000124",
-      "email": "Eddie@email.com"
-    },
-    "friend5": {
-      "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
-      "name": "Andrea",
-      "lastname": "Graham",
-      "phone": "815000124",
-      "email": "Andrea@email.com"
-    },
-    "friend6": {
-      "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
-      "name": "Carolyn",
-      "lastname": "Davies",
-      "phone": "815000124",
-      "email": "Carolyn@email.com"
-    },
-    "friend7": {
-      "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
-      "name": "Diana",
-      "lastname": "Coleman",
-      "phone": "815000124",
-      "email": "Diana@email.com"
-    },
-    "friend8": {
-      "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
-      "name": "Alan",
-      "lastname": "Butler",
-      "phone": "815000124",
-      "email": "Alan@email.com"
-    },
-    "friend9": {
-      "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
-      "name": "Owen",
-      "lastname": "Cornish",
-      "phone": "815000124",
-      "email": "Owen@email.com"
-    },
-    "friend10": {
-      "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
-      "name": "Ella",
-      "lastname": "Bailey",
-      "phone": "815000124",
-      "email": "Ella@email.com"
-    },
-    "friend11": {
-      "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
-      "name": "Carl",
-      "lastname": "Carr",
-      "phone": "815000124",
-      "email": "Carl@email.com"
-    },
-    "friend12": {
-      "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
-      "name": "Brandon",
-      "lastname": "Burgess",
-      "phone": "815000124",
-      "email": "Brandon@email.com"
-    },
-    "friend13": {
-      "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
-      "name": "Evan",
-      "lastname": "Black",
-      "phone": "815000124",
-      "email": "Evan@email.com"
-    },
-    "friend14": {
-      "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
-      "name": "Leonard",
-      "lastname": "Arnold",
-      "phone": "815000124",
-      "email": "Leonard@email.com"
-    }
+  "friend0": {
+    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
+    "name": "Robert",
+    "lastname": "Smith",
+    "phone": "615000123",
+    "email": "sara@email.com"
+  },
+  "friend1": {
+    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
+    "name": "Neil",
+    "lastname": "James",
+    "phone": "815000124",
+    "email": "mark@email.com"
+  },
+  "friend2": {
+    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
+    "name": "Ali",
+    "lastname": "Gomez",
+    "phone": "8150002564",
+    "email": "gomez@email.com"
+  },
+  "friend3": {
+    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
+    "name": "Sam",
+    "lastname": "Hart",
+    "phone": "715000124",
+    "email": "sam@email.com"
+  },
+  "friend4": {
+    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
+    "name": "Eddie",
+    "lastname": "Johnson",
+    "phone": "815000124",
+    "email": "Eddie@email.com"
+  },
+  "friend5": {
+    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
+    "name": "Andrea",
+    "lastname": "Graham",
+    "phone": "815000124",
+    "email": "Andrea@email.com"
+  },
+  "friend6": {
+    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
+    "name": "Carolyn",
+    "lastname": "Davies",
+    "phone": "815000124",
+    "email": "Carolyn@email.com"
+  },
+  "friend7": {
+    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
+    "name": "Diana",
+    "lastname": "Coleman",
+    "phone": "815000124",
+    "email": "Diana@email.com"
+  },
+  "friend8": {
+    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
+    "name": "Alan",
+    "lastname": "Butler",
+    "phone": "815000124",
+    "email": "Alan@email.com"
+  },
+  "friend9": {
+    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
+    "name": "Owen",
+    "lastname": "Cornish",
+    "phone": "815000124",
+    "email": "Owen@email.com"
+  },
+  "friend10": {
+    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
+    "name": "Ella",
+    "lastname": "Bailey",
+    "phone": "815000124",
+    "email": "Ella@email.com"
+  },
+  "friend11": {
+    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
+    "name": "Carl",
+    "lastname": "Carr",
+    "phone": "815000124",
+    "email": "Carl@email.com"
+  },
+  "friend12": {
+    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
+    "name": "Brandon",
+    "lastname": "Burgess",
+    "phone": "815000124",
+    "email": "Brandon@email.com"
+  },
+  "friend13": {
+    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
+    "name": "Evan",
+    "lastname": "Black",
+    "phone": "815000124",
+    "email": "Evan@email.com"
+  },
+  "friend14": {
+    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
+    "name": "Leonard",
+    "lastname": "Arnold",
+    "phone": "815000124",
+    "email": "Leonard@email.com"
   }
 }
