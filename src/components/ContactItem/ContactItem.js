@@ -10,12 +10,16 @@ class ContactItem extends React.Component {
   render() {
     const { friend } = this.props;
     return (
-      <div className='bg-light shadow-sm rounded w-100 m-2 p-2'>
-        <div className='d-flex flex-wrap'>
-          <p className='my-auto mr-4'><b>Name:</b> {friend.name}</p>
-          <p className='my-auto mr-4'><b>Last name:</b> {friend.lastname}</p>
-          <p className='my-auto mr-4'><b>Phone:</b> {friend.phone}</p>
-          <p className='my-auto mr-4'><b>E-mail:</b> {friend.email}</p>
+      <div className='bg-light shadow-sm rounded m-2 p-2'>
+        <div className='p-2'>
+          <div>
+            <p className='my-auto'><b>Name:</b> {friend.name}</p>
+            <p className='my-auto'><b>Last name:</b> {friend.lastname}</p>
+          </div>
+          <div className="my-3">
+            <p className='my-auto'><b>Phone:</b> {friend.phone}</p>
+            <p className='my-auto'><b>E-mail:</b> {friend.email}</p>
+          </div>
         </div>
       </div>
     );
