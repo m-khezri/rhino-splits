@@ -1,16 +1,18 @@
 {
-  "friend1": {
-    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
-    "name": "Sara",
-    "lastname": "Smith",
-    "phone": "615000123",
-    "email": "sara@email.com"
-  },
-  "friend2": {
-    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
-    "name": "Mark",
-    "lastname": "Johnson",
-    "phone": "815000124",
-    "email": "mark@email.com"
+  "friends": {
+    "friend0": {
+      "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
+      "name": "Sara",
+      "lastname": "Smith",
+      "phone": "615000123",
+      "email": "sara@email.com"
+    },
+    "friend1": {
+      "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
+      "name": "Mark",
+      "lastname": "Johnson",
+      "phone": "815000124",
+      "email": "mark@email.com"
+    }
   }
 }
