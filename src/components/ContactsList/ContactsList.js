@@ -18,9 +18,11 @@ class ContactsList extends React.Component {
       />
     ));
     return (
-      <div className="contacts-list-container bg-light m-0 p-1">
-        <p className="text-info">Contacts card container</p>
-        <p>{ContactItemComponents}</p>
+      <div className="contacts-list-container m-0 p-1">
+        <h5 className="text-info ml-2">Contacts list</h5>
+        <div className="d-flex flex-wrap">
+          {ContactItemComponents}
+        </div>
       </div>
     );
   }
