@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import '../App/App.scss';
 import firebase from 'firebase/app';
 import connection from '../helpers/data/connection';
-import Auth from '../components/Auth/Auth';
 import MyNavbar from '../components/MyNavar/MyNavbar';
 import authRequests from '../helpers/data/authRequests';
 
 class App extends Component {
   state = {
     authed: false,
+
   }
 
   componentDidMount() {
@@ -33,6 +33,7 @@ class App extends Component {
 
   isAuthenticated = () => {
     this.setState({ authed: true });
+
   }
 
   render() {
@@ -45,14 +46,16 @@ class App extends Component {
 
       return (
         <div className="App">
-          <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
-          <Auth isAuthenticated={this.isAuthenticated} />
+          <MyNavbar isAuthed={this.state.authed} isAuthenticated={this.isAuthenticated} logoutClickEvent={logoutClickEvent} />
+
         </div>
       );
     }
     return (
       <div className="App">
-        <MyNavbar isAuthed={this.state.authed} photoURL={this.state.authed} logoutClickEvent={logoutClickEvent} />
+        <MyNavbar
+          isAuthed={this.state.authed}
+          logoutClickEvent={logoutClickEvent} />
 
       </div>
     );
