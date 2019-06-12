@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../App/App.scss';
+import './App.scss';
 import firebase from 'firebase/app';
 import connection from '../helpers/data/connection';
 import MyNavbar from '../components/MyNavar/MyNavbar';
@@ -23,7 +23,7 @@ class App extends Component {
       .then((friends) => {
         this.setState({ friends });
       })
-      .catch(err => console.log('error with friends Get', err));
+      .catch(err => console.error('error with listing GET', err));
 
 
     this.removeListener = firebase.auth().onAuthStateChanged((user) => {
@@ -45,7 +45,6 @@ class App extends Component {
 
   isAuthenticated = () => {
     this.setState({ authed: true });
-
   }
 
   render() {
@@ -55,10 +54,11 @@ class App extends Component {
     };
 
     if (!this.state.authed) {
-
       return (
         <div className="App">
-          <MyNavbar isAuthed={this.state.authed} isAuthenticated={this.isAuthenticated} logoutClickEvent={logoutClickEvent} />
+          <MyNavbar isAuthed={this.state.authed}
+            isAuthenticated={this.isAuthenticated}
+            logoutClickEvent={logoutClickEvent} />
         </div>
       );
     }

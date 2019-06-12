@@ -11,10 +11,10 @@ class ContactItem extends React.Component {
     const { friend } = this.props;
     return (
       <div>
-        <p>friend.name</p>
-        <p>friend.lastname</p>
-        <p>friend.phone</p>
-        <p>friend.email</p>
+        <p>{friend.name}</p>
+        <p>{friend.lastname}</p>
+        <p>{friend.phone}</p>
+        <p>{friend.email}</p>
       </div>
     );
   }

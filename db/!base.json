@@ -1,4 +1,8 @@
 {
-  "friends": "mohammad",
-  "transactions": "dinner"
+  "friends": {
+    "sara": "Smith"
+  },
+  "transactions": {
+    "subject": "dinner"
+  }
 }
