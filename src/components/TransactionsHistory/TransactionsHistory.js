@@ -21,11 +21,27 @@ class TransactionHistroy extends React.Component {
     ));
 
     return (
-      <div className="transaction-container m0 p-1">
-        <p className="text-info">Transaction History</p>
-        <h2>{transactionItemComponents}</h2>
+      <div className="transaction-container">
+        <h5 className="text-info m-3">Transaction history</h5>
+        <div className="d-flex bg-dark text-light rounded mx-3 p-1">
+          <div className="w-25 text-left">
+            <p className="my-auto">Date</p>
+          </div>
 
+          <div className="w-50 text-left">
+            <p className="my-auto">Subject</p>
+          </div>
+
+          <div className="w-25 text-right">
+            <p className="my-auto">Price</p>
+          </div>
+
+        </div>
+        <div className=''>
+          {transactionItemComponents}
+        </div>
       </div>
+
     );
   }
 }
