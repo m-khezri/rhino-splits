@@ -10,7 +10,7 @@ class ContactItem extends React.Component {
   render() {
     const { friend } = this.props;
     return (
-      <div className='bg-light shadow-sm rounded m-2 p-2'>
+      <div className='card-holder card w-100 bg-light shadow-sm rounded m-2 p-2'>
         <div className='p-2'>
           <div>
             <p className='my-auto'><b>Name:</b> {friend.name}</p>
