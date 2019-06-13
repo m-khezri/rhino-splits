@@ -11,7 +11,6 @@ class TransactionsItem extends React.Component {
         <p>{transaction.subject}</p>
         <p>{transaction.amount}</p>
       </div>
-
     );
   }
 }
