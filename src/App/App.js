@@ -81,7 +81,6 @@ class App extends Component {
             <ContactsList friends={this.state.friends} />
           </div>
         </div>
-
       </div>
     );
   }
