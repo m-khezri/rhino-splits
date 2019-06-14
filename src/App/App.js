@@ -54,6 +54,7 @@ class App extends Component {
   }
 
   render() {
+
     const logoutClickEvent = () => {
       authRequests.logoutUser();
       this.setState({ authed: false });
@@ -80,7 +81,6 @@ class App extends Component {
             <ContactsList friends={this.state.friends} />
           </div>
         </div>
-
       </div>
     );
   }
