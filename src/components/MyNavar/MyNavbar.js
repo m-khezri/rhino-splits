@@ -17,6 +17,9 @@ class MyNavbar extends React.Component {
 
   render() {
     const { isAuthed, logoutClickEvent } = this.props;
+    const userName = () => authRequests.getCurrentUserName();
+    const userPic = () => authRequests.getCurrentUserPhoto();
+
     return (
       <div className="navbar-container">
         <nav className="navbar navbar-expand-lg">
@@ -31,7 +34,11 @@ class MyNavbar extends React.Component {
               <li className="nav-item">
                 {isAuthed
                   ?
-                  <a className='nav-link' href='#http://localhost:3000/' onClick={logoutClickEvent}>Logout</a>
+                  <div>
+                    <img src={userPic} alt="user" />
+                    <h6>Welcome,<span>{userName}</span></h6>
+                    <a className='nav-link' href='#http://localhost:3000/' onClick={logoutClickEvent}>Logout</a>
+                  </div>
                   :
                   <li>
                     <button className="btn btn-light" onClick={this.authenticateUser}>Login</button>

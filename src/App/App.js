@@ -54,6 +54,7 @@ class App extends Component {
   }
 
   render() {
+
     const logoutClickEvent = () => {
       authRequests.logoutUser();
       this.setState({ authed: false });
