@@ -25,15 +25,15 @@ class TransactionHistroy extends React.Component {
         <h5 className="text-info m-3">Transaction history</h5>
         <div className="d-flex bg-dark text-light rounded mx-3 p-1">
           <div className="w-25 text-left">
-            <p className="my-auto">Date</p>
+            <p className="my-auto"><b>Date</b></p>
           </div>
 
           <div className="w-50 text-left">
-            <p className="my-auto">Subject</p>
+            <p className="my-auto"><b>Subject</b></p>
           </div>
 
           <div className="w-25 text-right">
-            <p className="my-auto">Price</p>
+            <p className="my-auto"><b>Price</b></p>
           </div>
 
         </div>
