@@ -1,6 +1,6 @@
 import React from 'react';
-
 import './TransactionsItem.scss';
+import formatPrice from '../../helpers/formatPrice';
 
 class TransactionsItem extends React.Component {
   render() {
@@ -17,7 +17,7 @@ class TransactionsItem extends React.Component {
           </div>
 
           <div className="w-25 text-right">
-            <p className="my-auto">{transaction.amount}</p>
+            <p className="my-auto">{formatPrice(transaction.amount)}</p>
           </div>
 
         </div>
