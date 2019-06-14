@@ -6,7 +6,6 @@ import MyNavbar from '../components/MyNavar/MyNavbar';
 import authRequests from '../helpers/data/authRequests';
 import friendsRequests from '../helpers/data/friendsRequests';
 import transactionsRequests from '../helpers/data/transactionsRequests';
-
 import ControlBar from '../components/ControlBar/ControlBar';
 import TransactionHistroy from '../components/TransactionsHistory/TransactionsHistory';
 import ContactsList from '../components/ContactsList/ContactsList';
@@ -27,14 +26,11 @@ class App extends Component {
       })
       .catch(err => console.error('error with listing GET', err));
 
-
-
     friendsRequests.getRequest()
       .then((friends) => {
         this.setState({ friends });
       })
       .catch(err => console.error('error with listing GET', err));
-
 
     this.removeListener = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
