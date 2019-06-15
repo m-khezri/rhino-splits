@@ -1,14 +1,14 @@
 {
   "transaction0": {
     "fid": "01",
-    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
+    "uid": "RB7veQVVzGazI8zW0FgkXtPTz122",
     "date": "03/05/2019",
     "subject": "payment for hockey ticket",
     "amount": 20
   },
   "transaction1": {
     "fid": "01",
-    "uid": "AIzaSyBkwVbMnob4V-3-PhNVzV5aoFh-k2Wo-Q4",
+    "uid": "RB7veQVVzGazI8zW0FgkXtPTz122",
     "date": "03/04/2019",
     "subject": "Lunch fee",
     "amount": 25

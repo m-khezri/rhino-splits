@@ -10,21 +10,27 @@ class ContactItem extends React.Component {
 
   render() {
     const { friend } = this.props;
+
     const uid = authRequests.getCurrentUid();
 
     const createButtons = () => {
+      console.log("friend", friend.uid, "user", uid);
+
       if (friend.uid === uid) {
         return (
           <div>
-            <button className="btn btn-default">
-              YES
-            </button>
+            <span className="col">
+              <a href="#" className="waves-effect waves-teal btn-flat">
+                <i class="material-icons">
+                  close
+                </i>
+              </a>
+            </span>
           </div>
         );
       }
-      return <span>NO!!</span>;
+      return <span className="col-2"></span>;
     };
-
 
     return (
       <div className='card-holder card w-100 bg-light shadow-sm rounded m-2 p-2'>
