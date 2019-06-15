@@ -7,14 +7,16 @@ import './ContactsList.scss';
 class ContactsList extends React.Component {
   static propTypes = {
     friends: PropTypes.arrayOf(friendsShape),
+    deleteSingleFriend: PropTypes.func,
   }
 
   render() {
-    const { friends } = this.props;
+    const { friends, deleteSingleFriend } = this.props;
     const ContactItemComponents = friends.map(friend => (
       <ContactItem
         friend={friend}
         key={friend.id}
+        deleteSingleFriend={deleteSingleFriend}
       />
     ));
     return (

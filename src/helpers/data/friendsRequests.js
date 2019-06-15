@@ -19,6 +19,10 @@ const getRequest = () => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
+const deleteFriends = friendId => axios.delete(`${firebaseUrl}/friends/${friendId}.json`);
+
+
 export default {
   getRequest,
+  deleteFriends
 };

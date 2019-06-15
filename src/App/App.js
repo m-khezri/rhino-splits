@@ -53,6 +53,17 @@ class App extends Component {
     this.setState({ authed: true });
   }
 
+  deleteOne = (friendId) => {
+    friendsRequests.deleteFriends(friendId)
+      .then(() => {
+        friendsRequests.getRequest()
+          .then((friends) => {
+            this.setState({ friends });
+          });
+      })
+      .catch(err => console.error('error with delete single', err));
+  }
+
   render() {
 
     const logoutClickEvent = () => {
@@ -78,7 +89,10 @@ class App extends Component {
           <TransactionHistroy transactions={this.state.transactions} />
           <div className='right-components-cont d-flex flex-column flex-wrap bg-secondary'>
             <ControlBar />
-            <ContactsList friends={this.state.friends} />
+            <ContactsList
+              friends={this.state.friends}
+              deleteSingleFriend={this.deleteOne}
+            />
           </div>
         </div>
       </div>
