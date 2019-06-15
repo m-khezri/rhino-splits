@@ -1,11 +1,20 @@
 import React from 'react';
 import './ContactItem.scss';
+import PropTypes from 'prop-types';
 import friendsShape from '../../helpers/propz/friendsShape';
 import authRequests from '../../helpers/data/authRequests';
 
 class ContactItem extends React.Component {
   static propTypes = {
     friend: friendsShape,
+    deleteSingleFriend: PropTypes.func,
+  }
+
+  deleteEvent = (e) => {
+    e.preventDefault();
+    const { deleteSingleFriend, friend } = this.props;
+    deleteSingleFriend(friend.id);
+
   }
 
   render() {
@@ -14,13 +23,11 @@ class ContactItem extends React.Component {
     const uid = authRequests.getCurrentUid();
 
     const createButtons = () => {
-      console.log("friend", friend.uid, "user", uid);
-
       if (friend.uid === uid) {
         return (
           <div>
             <span className="col">
-              <a href="#" className="waves-effect waves-teal btn-flat">
+              <a href="#" className="waves-effect waves-teal btn-flat" onClick={this.deleteEvent}>
                 <i class="material-icons">
                   close
                 </i>
