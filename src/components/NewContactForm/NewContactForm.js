@@ -1,6 +1,7 @@
 import React from 'react';
 import './NewContactForm.scss';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Col, Input } from 'reactstrap';
+
 
 class NewContactForm extends React.Component {
 
@@ -23,10 +24,31 @@ class NewContactForm extends React.Component {
           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
             <ModalHeader toggle={this.toggle}>Create new contact</ModalHeader>
             <ModalBody>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </ModalBody>
+
+              <Form>
+                <FormGroup row>
+                  <Label for="firstName" sm={6}>First name</Label>
+                  <Col sm={12}>
+                    <Input type="text" name="firstName" id="firstName" placeholder="First name" />
+                  </Col>
+                  <Label for="lastName" sm={6}>Last name</Label>
+                  <Col sm={12}>
+                    <Input type="text" name="lastName" id="lastName" placeholder="Last name" />
+                  </Col>
+                  <Label for="exampleEmail" sm={6}>Email address</Label>
+                  <Col sm={12}>
+                    <Input type="email" name="email" id="exampleEmail" placeholder="E-mail address" />
+                  </Col>
+                  <Label for="phone" sm={6}>Phone number</Label>
+                  <Col sm={12}>
+                    <Input type="phone" name="phone" id="phone" placeholder="Phone number" />
+                  </Col>
+                </FormGroup>
+              </Form>
+
+            </ModalBody>
             <ModalFooter>
-              <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
+              <Button color="primary" onClick={this.toggle}>Save</Button>{' '}
               <Button color="secondary" onClick={this.toggle}>Cancel</Button>
             </ModalFooter>
           </Modal>
