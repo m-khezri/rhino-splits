@@ -27,7 +27,7 @@ class ContactItem extends React.Component {
         return (
           <div>
             <span className="col">
-              <a href="#" className="waves-effect waves-teal btn-flat" onClick={this.deleteEvent}>
+              <a href="#" className="del-btn waves-effect waves-teal btn-flat" onClick={this.deleteEvent}>
                 <i class="material-icons">
                   close
                 </i>
@@ -40,7 +40,7 @@ class ContactItem extends React.Component {
     };
 
     return (
-      <div className='card-holder card w-100 bg-light shadow-sm rounded m-2 p-2'>
+      <div className='contact-card card bg-light shadow-sm rounded m-2 p-2'>
         <div className='p-2'>
           {createButtons()}
 

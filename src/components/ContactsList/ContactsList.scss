@@ -4,3 +4,9 @@
   overflow-y: auto;
   height: 80vh;
 }
+
+.cards-holder{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
