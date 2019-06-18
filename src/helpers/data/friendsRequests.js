@@ -20,9 +20,11 @@ const getRequest = () => new Promise((resolve, reject) => {
 });
 
 const deleteFriends = friendId => axios.delete(`${firebaseUrl}/friends/${friendId}.json`);
+const postRequest = friend => axios.post(`${firebaseUrl}/friends.json`, friend);
 
 
 export default {
   getRequest,
-  deleteFriends
+  deleteFriends,
+  postRequest
 };

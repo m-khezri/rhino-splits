@@ -64,8 +64,9 @@ class App extends Component {
       .catch(err => console.error('error with delete single', err));
   }
 
-  render() {
 
+
+  render() {
     const logoutClickEvent = () => {
       authRequests.logoutUser();
       this.setState({ authed: false });
