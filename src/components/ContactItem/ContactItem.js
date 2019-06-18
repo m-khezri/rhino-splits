@@ -28,7 +28,7 @@ class ContactItem extends React.Component {
           <div>
             <span className="col">
               <a href="#" className="del-btn waves-effect waves-teal btn-flat" onClick={this.deleteEvent}>
-                <i class="material-icons">
+                <i className="material-icons">
                   close
                 </i>
               </a>

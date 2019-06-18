@@ -1,5 +1,7 @@
 import React from 'react';
 import './NewContactForm.scss';
+import PropTypes from 'prop-types';
+import authRequests from '../../helpers/data/authRequests';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Col, Input } from 'reactstrap';
 
 
@@ -12,6 +14,10 @@ const defaultContact = {
 };
 
 class newContactForm extends React.Component {
+
+  static propTypes = {
+    onSubmit: PropTypes.func,
+  }
 
   state = {
     modal: false,
@@ -26,6 +32,10 @@ class newContactForm extends React.Component {
   }
 
   firstNameChange = e => this.formFieldStringState('firstName', e);
+  lastNameChange = e => this.formFieldStringState('lastName', e);
+  emailChange = e => this.formFieldStringState('email', e);
+  phoneChange = e => this.formFieldStringState('phone', e);
+
 
   toggle() {
     this.setState(prevState => ({
@@ -33,6 +43,16 @@ class newContactForm extends React.Component {
     }));
   }
   toggle = this.toggle.bind(this);
+
+
+  formSubmit = (e) => {
+    e.preventDefault();
+    const { onSubmit } = this.props;
+    const myFriend = { ...this.state.newFriend };
+    myFriend.uid = authRequests.getCurrentUid();
+    onSubmit(myFriend);
+    this.setState({ newFriend: defaultContact });
+  }
 
   render() {
     const { newContact } = this.state;
@@ -46,7 +66,7 @@ class newContactForm extends React.Component {
             <ModalHeader toggle={this.toggle}>Create new contact</ModalHeader>
             <ModalBody>
 
-              <Form>
+              <Form onSubmit={this.formSubmit}>
                 <FormGroup row>
                   <Label className="mt-3" htmlfor="firstName" sm={6}>First name</Label>
                   <Col sm={12}>
