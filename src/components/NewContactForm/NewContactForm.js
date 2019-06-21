@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import authRequests from '../../helpers/data/authRequests';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Col, Input } from 'reactstrap';
 
-
 const defaultContact = {
   name: '',
   lastName: '',
@@ -48,7 +47,8 @@ class newContactForm extends React.Component {
   formSubmit = (e) => {
     e.preventDefault();
     const { onSubmit } = this.props;
-    const myFriend = { ...this.state.newFriend };
+    const myFriend = { ...this.state.newContact };
+    console.log(myFriend, e);
     myFriend.uid = authRequests.getCurrentUid();
     onSubmit(myFriend);
     this.setState({ newFriend: defaultContact });
@@ -116,7 +116,7 @@ class newContactForm extends React.Component {
 
             </ModalBody>
             <ModalFooter>
-              <Button color="primary" onClick={this.toggle}>Save</Button>{' '}
+              <Button color="primary" onClick={this.toggle}>Save</Button>
               <Button color="secondary" onClick={this.toggle}>Cancel</Button>
             </ModalFooter>
           </Modal>
