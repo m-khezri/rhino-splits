@@ -43,12 +43,10 @@ class newContactForm extends React.Component {
   }
   toggle = this.toggle.bind(this);
 
-
   formSubmit = (e) => {
     e.preventDefault();
     const { onSubmit } = this.props;
     const myFriend = { ...this.state.newContact };
-    console.log(myFriend, e);
     myFriend.uid = authRequests.getCurrentUid();
     onSubmit(myFriend);
     this.setState({ newFriend: defaultContact });

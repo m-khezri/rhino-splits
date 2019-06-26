@@ -9,6 +9,7 @@ import transactionsRequests from '../helpers/data/transactionsRequests';
 import ControlBar from '../components/ControlBar/ControlBar';
 import TransactionHistroy from '../components/TransactionsHistory/TransactionsHistory';
 import ContactsList from '../components/ContactsList/ContactsList';
+import NewContactForm from '../components/NewContactForm/NewContactForm';
 
 class App extends Component {
   state = {
@@ -64,7 +65,16 @@ class App extends Component {
       .catch(err => console.error('error with delete single', err));
   }
 
-
+  formSubmitEvent = (newContact) => {
+    friendsRequests.postRequest(newContact)
+      .then(() => {
+        friendsRequests.getRequest()
+          .then((friends) => {
+            this.setState({ friends });
+          });
+      })
+      .catch(err => console.error('error with friends post', err));
+  }
 
   render() {
     const logoutClickEvent = () => {
@@ -89,7 +99,7 @@ class App extends Component {
         <div className="components-container d-flex flex-wrap">
           <TransactionHistroy transactions={this.state.transactions} />
           <div className='right-components-cont d-flex flex-column flex-wrap bg-secondary'>
-            <ControlBar />
+            <NewContactForm onSubmit={this.formSubmitEvent} />
             <ContactsList
               friends={this.state.friends}
               deleteSingleFriend={this.deleteOne}
