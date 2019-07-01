@@ -6,7 +6,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, La
 
 const defaultContact = {
   name: '',
-  lastName: '',
+  lastname: '',
   email: '',
   phoneNum: 0,
   uid: '',
@@ -30,8 +30,8 @@ class newContactForm extends React.Component {
     this.setState({ newContact: tempContact });
   }
 
-  firstNameChange = e => this.formFieldStringState('firstName', e);
-  lastNameChange = e => this.formFieldStringState('lastName', e);
+  firstNameChange = e => this.formFieldStringState('name', e);
+  lastNameChange = e => this.formFieldStringState('lastname', e);
   emailChange = e => this.formFieldStringState('email', e);
   phoneChange = e => this.formFieldStringState('phone', e);
 
@@ -50,6 +50,7 @@ class newContactForm extends React.Component {
     myFriend.uid = authRequests.getCurrentUid();
     onSubmit(myFriend);
     this.setState({ newFriend: defaultContact });
+    this.toggle();
   }
 
   render() {
@@ -70,8 +71,8 @@ class newContactForm extends React.Component {
                   <Col sm={12}>
                     <Input
                       type="text"
-                      value={newContact.firstName}
-                      id="firstName"
+                      value={newContact.name}
+                      id="name"
                       placeholder="First name"
                       onChange={this.firstNameChange}
                     />
@@ -81,8 +82,8 @@ class newContactForm extends React.Component {
                   <Col sm={12}>
                     <Input
                       type="text"
-                      value={newContact.lastName}
-                      id="lastName"
+                      value={newContact.lastname}
+                      id="lastname"
                       placeholder="Last name"
                       onChange={this.lastNameChange}
                     />
@@ -114,7 +115,7 @@ class newContactForm extends React.Component {
 
             </ModalBody>
             <ModalFooter>
-              <Button color="primary" onClick={this.toggle}>Save</Button>
+              <Button color="primary" onClick={this.formSubmit}>Save</Button>
               <Button color="secondary" onClick={this.toggle}>Cancel</Button>
             </ModalFooter>
           </Modal>

@@ -6,7 +6,6 @@ import MyNavbar from '../components/MyNavar/MyNavbar';
 import authRequests from '../helpers/data/authRequests';
 import friendsRequests from '../helpers/data/friendsRequests';
 import transactionsRequests from '../helpers/data/transactionsRequests';
-import ControlBar from '../components/ControlBar/ControlBar';
 import TransactionHistroy from '../components/TransactionsHistory/TransactionsHistory';
 import ContactsList from '../components/ContactsList/ContactsList';
 import NewContactForm from '../components/NewContactForm/NewContactForm';
@@ -66,6 +65,7 @@ class App extends Component {
   }
 
   formSubmitEvent = (newContact) => {
+    console.log(newContact);
     friendsRequests.postRequest(newContact)
       .then(() => {
         friendsRequests.getRequest()
