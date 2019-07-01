@@ -21,6 +21,7 @@ class ContactItem extends React.Component {
   editEvent = (e) => {
     e.preventDefault();
     const { passFriendToEdit, friend } = this.props;
+    console.log(passFriendToEdit);
     passFriendToEdit(friend.id);
   }
 

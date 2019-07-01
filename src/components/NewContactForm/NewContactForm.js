@@ -61,6 +61,7 @@ class newContactForm extends React.Component {
     if (prevProps !== this.props && isEditing) {
       friendsRequests.getSingleFriend(editId)
         .then((friend) => {
+          this.toggle();
           this.setState({ newFriend: friend.data });
         })
         .catch(err => console.error('error with getSingleFriend', err));
