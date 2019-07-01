@@ -15,6 +15,8 @@ class App extends Component {
     authed: false,
     friends: [],
     transactions: [],
+    isEditing: false,
+    editId: '-1',
   }
 
   componentDidMount() {
@@ -75,16 +77,26 @@ class App extends Component {
       .catch(err => console.error('error with friends post', err));
   }
 
+  passFriendToEdit = friendId => this.setState({ isEditing: true, editId: friendId });
+
   render() {
+    const {
+      authed,
+      friends,
+      isEditing,
+      editId,
+    } = this.state;
+
+
     const logoutClickEvent = () => {
       authRequests.logoutUser();
       this.setState({ authed: false });
     };
 
-    if (!this.state.authed) {
+    if (!authed) {
       return (
         <div className="App">
-          <MyNavbar isAuthed={this.state.authed}
+          <MyNavbar isAuthed={authed}
             isAuthenticated={this.isAuthenticated}
             logoutClickEvent={logoutClickEvent} />
         </div>
@@ -93,15 +105,15 @@ class App extends Component {
     return (
       <div className="App">
         <MyNavbar
-          isAuthed={this.state.authed}
-          logoutClickEvent={logoutClickEvent} />
+          isAuthed={authed} logoutClickEvent={logoutClickEvent} />
         <div className="components-container d-flex flex-wrap">
           <TransactionHistroy transactions={this.state.transactions} />
           <div className='right-components-cont d-flex flex-column flex-wrap bg-secondary'>
-            <NewContactForm onSubmit={this.formSubmitEvent} />
+            <NewContactForm onSubmit={this.formSubmitEvent} isEditing={isEditing} editId={editId} />
             <ContactsList
-              friends={this.state.friends}
+              friends={friends}
               deleteSingleFriend={this.deleteOne}
+              passFriendToEdit={this.passFriendToEdit}
             />
           </div>
         </div>

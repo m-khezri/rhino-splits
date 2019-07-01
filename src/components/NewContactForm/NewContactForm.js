@@ -3,6 +3,7 @@ import './NewContactForm.scss';
 import PropTypes from 'prop-types';
 import authRequests from '../../helpers/data/authRequests';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Col, Input } from 'reactstrap';
+import friendsRequests from '../../helpers/data/friendsRequests';
 
 const defaultContact = {
   name: '',
@@ -16,6 +17,8 @@ class newContactForm extends React.Component {
 
   static propTypes = {
     onSubmit: PropTypes.func,
+    isEditing: PropTypes.bool,
+    editId: PropTypes.string,
   }
 
   state = {
@@ -52,6 +55,18 @@ class newContactForm extends React.Component {
     this.setState({ newFriend: defaultContact });
     this.toggle();
   }
+
+  componentDidUpdate(prevProps) {
+    const { isEditing, editId } = this.props;
+    if (prevProps !== this.props && isEditing) {
+      friendsRequests.getSingleFriend(editId)
+        .then((friend) => {
+          this.setState({ newFriend: friend.data });
+        })
+        .catch(err => console.error('error with getSingleFriend', err));
+    }
+  }
+
 
   render() {
     const { newContact } = this.state;

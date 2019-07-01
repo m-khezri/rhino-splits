@@ -8,6 +8,7 @@ class ContactItem extends React.Component {
   static propTypes = {
     friend: friendsShape,
     deleteSingleFriend: PropTypes.func,
+    passFriendToEdit: PropTypes.func,
   }
 
   deleteEvent = (e) => {
@@ -15,6 +16,12 @@ class ContactItem extends React.Component {
     const { deleteSingleFriend, friend } = this.props;
     deleteSingleFriend(friend.id);
 
+  }
+
+  editEvent = (e) => {
+    e.preventDefault();
+    const { passFriendToEdit, friend } = this.props;
+    passFriendToEdit(friend.id);
   }
 
   render() {
@@ -27,7 +34,7 @@ class ContactItem extends React.Component {
         return (
           <div>
             <span className="col">
-              <a href="http://localhost:3000/" className="mx-2 edit-btn">
+              <a href="http://localhost:3000/" className="mx-2 edit-btn" onClick={this.editEvent}>
                 <i class="material-icons">
                   edit
               </i>
