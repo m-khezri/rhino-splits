@@ -65,7 +65,6 @@ class App extends Component {
   }
 
   formSubmitEvent = (newContact) => {
-    console.log(newContact);
     friendsRequests.postRequest(newContact)
       .then(() => {
         friendsRequests.getRequest()
