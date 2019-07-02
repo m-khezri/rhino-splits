@@ -3,10 +3,12 @@
   scroll-behavior: smooth;
   overflow-y: auto;
   height: 80vh;
+  
 }
 
 .cards-holder{
+  padding: 1% 5%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: start;
 }

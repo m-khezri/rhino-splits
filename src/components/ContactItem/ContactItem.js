@@ -15,13 +15,11 @@ class ContactItem extends React.Component {
     e.preventDefault();
     const { deleteSingleFriend, friend } = this.props;
     deleteSingleFriend(friend.id);
-
   }
 
   editEvent = (e) => {
     e.preventDefault();
     const { passFriendToEdit, friend } = this.props;
-    console.log(passFriendToEdit);
     passFriendToEdit(friend.id);
   }
 
@@ -33,7 +31,7 @@ class ContactItem extends React.Component {
     const createButtons = () => {
       if (friend.uid === uid) {
         return (
-          <div>
+          <div className="flip-card-back rounded">
             <span className="col">
               <a href="http://localhost:3000/" className="mx-2 edit-btn" onClick={this.editEvent}>
                 <i class="material-icons">
@@ -54,18 +52,19 @@ class ContactItem extends React.Component {
     };
 
     return (
-      <div className='contact-card card bg-light shadow-sm rounded m-2 p-2'>
-        <div className='p-2'>
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className='flip-card-front rounded'>
+            <div>
+              <h6 className='my-auto'><b>Name:</b> {friend.name}</h6>
+              <h6 className='my-auto'><b>Last name:</b> {friend.lastname}</h6>
+            </div>
+            <div className="my-3">
+              <h6 className='my-auto'><b>Phone:</b> {friend.phone}</h6>
+              <h6 className='my-auto'><b>E-mail:</b> {friend.email}</h6>
+            </div>
+          </div>
           {createButtons()}
-
-          <div>
-            <p className='my-auto'><b>Name:</b> {friend.name}</p>
-            <p className='my-auto'><b>Last name:</b> {friend.lastname}</p>
-          </div>
-          <div className="my-3">
-            <p className='my-auto'><b>Phone:</b> {friend.phone}</p>
-            <p className='my-auto'><b>E-mail:</b> {friend.email}</p>
-          </div>
         </div>
       </div>
     );
