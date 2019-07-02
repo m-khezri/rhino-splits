@@ -67,14 +67,26 @@ class App extends Component {
   }
 
   formSubmitEvent = (newContact) => {
-    friendsRequests.postRequest(newContact)
-      .then(() => {
-        friendsRequests.getRequest()
-          .then((friends) => {
-            this.setState({ friends });
-          });
-      })
-      .catch(err => console.error('error with friends post', err));
+    const { isEditing, editId } = this.state;
+    if (isEditing) {
+      friendsRequests.putRequest(editId, newContact)
+        .then(() => {
+          friendsRequests.getRequest()
+            .then((friends) => {
+              this.setState({ friends, isEditing: false, editId: '-1' });
+            });
+        })
+        .catch(err => console.error('error with friends post', err));
+    } else {
+      friendsRequests.postRequest(newContact)
+        .then(() => {
+          friendsRequests.getRequest()
+            .then((friends) => {
+              this.setState({ friends });
+            });
+        })
+        .catch(err => console.error('error with friends post', err));
+    }
   }
 
   passFriendToEdit = friendId => this.setState({ isEditing: true, editId: friendId });
