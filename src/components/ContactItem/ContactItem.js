@@ -3,6 +3,7 @@ import './ContactItem.scss';
 import PropTypes from 'prop-types';
 import friendsShape from '../../helpers/propz/friendsShape';
 import authRequests from '../../helpers/data/authRequests';
+import { Input } from 'reactstrap';
 
 class ContactItem extends React.Component {
   static propTypes = {
@@ -32,19 +33,33 @@ class ContactItem extends React.Component {
       if (friend.uid === uid) {
         return (
           <div className="flip-card-back rounded">
-            <span className="col">
-              <a href="http://localhost:3000/" className="mx-2 edit-btn" onClick={this.editEvent}>
-                <i class="material-icons">
-                  edit
-              </i>
-              </a>
+            <h6 className="text-light">Make a payment, Update or delete contact</h6>
+            <Input
+              className="my-1"
+              type="text"
+              id="name"
+            />
+            <Input
+              className="my-1"
+              type="text"
+              id="lastname"
+            />
+            <Input
+              className="my-1"
+              type="text"
+              id="phone"
+            />
+            <Input
+              className="my-1"
+              type="text"
+              id="email"
+            />
 
-              <a href="http://localhost:3000/" className="del-btn" onClick={this.deleteEvent}>
-                <i className="material-icons">
-                  close
-                </i>
-              </a>
-            </span>
+            <div className="btn-group btn-group-sm my-2">
+              <button className="btn btn-success">Make a payment</button>
+              <button className="btn btn-primary" onClick={this.editEvent}>Update</button>
+              <button className="btn btn-danger" onClick={this.deleteEvent}>Delete</button>
+            </div>
           </div>
         );
       }
@@ -52,21 +67,21 @@ class ContactItem extends React.Component {
     };
 
     return (
-      <div className="flip-card">
-        <div className="flip-card-inner">
+      <div className="flip-card ">
+        <div className="flip-card-inner shadow">
           <div className='flip-card-front rounded'>
             <div>
-              <h6 className='my-auto'><b>Name:</b> {friend.name}</h6>
-              <h6 className='my-auto'><b>Last name:</b> {friend.lastname}</h6>
+              <p className='my-auto font-weight-bold'><h6 className="display-4 text-primary mb-4">{friend.name}{' '}{friend.lastname}</h6></p>
             </div>
-            <div className="my-3">
-              <h6 className='my-auto'><b>Phone:</b> {friend.phone}</h6>
-              <h6 className='my-auto'><b>E-mail:</b> {friend.email}</h6>
+            <hr />
+            <div className="my-5">
+              <p className='my-auto font-weight-bold'>Phone:<h6 className="display-4">{friend.phone}</h6></p>
+              <p className='my-auto font-weight-bold'>E-mail:<h6 className="display-4">{friend.email}</h6></p>
             </div>
           </div>
           {createButtons()}
-        </div>
-      </div>
+        </div >
+      </div >
     );
   }
 }

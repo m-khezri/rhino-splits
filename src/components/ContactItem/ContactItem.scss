@@ -1,12 +1,13 @@
 .flip-card {
   background-color: transparent;
   width: 350px;
-  height: 200px;
+  height: 265px;
   perspective: 1000px;
-  margin: 3px;
+  margin: 10px;
 }
 
 .flip-card-inner {
+  text-align: center;
   position: relative;
   width: 100%;
   height: 100%;
@@ -28,10 +29,14 @@
 }
 
 .flip-card-front {
-  background-color: #eceff1;
+  background-color: #fff;
 }
 
 .flip-card-back {
-  background-color: #b0bec5;
+  background-color: #455a64;
   transform: rotateY(180deg);
+}
+
+.display-4 {
+  font-size: 1.8rem !important;
 }
