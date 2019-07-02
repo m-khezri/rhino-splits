@@ -73,7 +73,7 @@ class newContactForm extends React.Component {
     return (
       <div className="control-bar-container m-0 p-4">
         <div>
-          <Button className="btn btn-success btn-lg" color="success" onClick={this.toggle}>{this.props.buttonLabel}
+          <Button className="btn btn-info btn-lg" color="success" onClick={this.toggle}>{this.props.buttonLabel}
             <i className="mr-2 large material-icons">person_add</i>Add new friend</Button>
 
           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
