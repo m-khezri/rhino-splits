@@ -24,6 +24,11 @@ class ContactItem extends React.Component {
     passFriendToEdit(friend.id);
   }
 
+  firstnamechange = e => this.editEvent('name', e);
+  lastnamechange = e => this.editEvent('lastname', e);
+  phonechange = e => this.editEvent('phone', e);
+  emailchange = e => this.editEvent('email', e);
+
   render() {
     const { friend } = this.props;
 
@@ -38,21 +43,29 @@ class ContactItem extends React.Component {
               className="my-1"
               type="text"
               id="name"
+              value={friend.name}
+              onChange={this.firstnamechange}
             />
             <Input
               className="my-1"
               type="text"
               id="lastname"
+              value={friend.lastname}
+              onChange={this.lastnamechange}
             />
             <Input
               className="my-1"
               type="text"
               id="phone"
+              value={friend.phone}
+              onChange={this.phonechange}
             />
             <Input
               className="my-1"
               type="text"
               id="email"
+              value={friend.email}
+              onChange={this.emailchange}
             />
 
             <div className="btn-group btn-group-sm my-2">
