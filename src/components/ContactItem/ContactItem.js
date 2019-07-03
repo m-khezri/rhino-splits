@@ -5,11 +5,30 @@ import friendsShape from '../../helpers/propz/friendsShape';
 import authRequests from '../../helpers/data/authRequests';
 import { Input } from 'reactstrap';
 
+const defaulContact = {
+  name: '',
+  lastname: '',
+  email: '',
+  phoneNum: 0,
+  uid: '',
+};
+
 class ContactItem extends React.Component {
   static propTypes = {
     friend: friendsShape,
     deleteSingleFriend: PropTypes.func,
     passFriendToEdit: PropTypes.func,
+  }
+
+  state = {
+    friend: this.props.friend,
+    newContact: defaulContact,
+  }
+
+  componentWillUpdate(nextProps) {
+    if (nextProps.friend !== this.props.friend && nextProps.friend.name) {
+      this.setState({ newContact: nextProps.friend.name });
+    }
   }
 
   deleteEvent = (e) => {
@@ -18,10 +37,12 @@ class ContactItem extends React.Component {
     deleteSingleFriend(friend.id);
   }
 
-  editEvent = (e) => {
+  editEvent = (name, e) => {
+    console.error('e', e);
     e.preventDefault();
-    const { passFriendToEdit, friend } = this.props;
-    passFriendToEdit(friend.id);
+    const tempContact = { ...this.state.newContact };
+    tempContact[name] = e.target.value;
+    this.setState({ newContact: tempContact });
   }
 
   firstnamechange = e => this.editEvent('name', e);
@@ -30,12 +51,11 @@ class ContactItem extends React.Component {
   emailchange = e => this.editEvent('email', e);
 
   render() {
-    const { friend } = this.props;
-
+    const taco = this.state.newContact;
     const uid = authRequests.getCurrentUid();
 
     const createButtons = () => {
-      if (friend.uid === uid) {
+      if (this.state.friend.uid === uid) {
         return (
           <div className="flip-card-back rounded">
             <h6 className="text-light">Make a payment, Update or delete contact</h6>
@@ -43,28 +63,32 @@ class ContactItem extends React.Component {
               className="my-1"
               type="text"
               id="name"
-              value={friend.name}
+              placeholder={this.state.friend.name}
+              value={taco.name}
               onChange={this.firstnamechange}
             />
             <Input
               className="my-1"
               type="text"
               id="lastname"
-              value={friend.lastname}
+              placeholder={this.state.friend.lastname}
+              value={taco.lastname}
               onChange={this.lastnamechange}
             />
             <Input
               className="my-1"
               type="text"
               id="phone"
-              value={friend.phone}
+              placeholder={this.state.friend.phone}
+              value={taco.phone}
               onChange={this.phonechange}
             />
             <Input
               className="my-1"
               type="text"
               id="email"
-              value={friend.email}
+              placeholder={this.state.friend.email}
+              value={taco.email}
               onChange={this.emailchange}
             />
 
@@ -84,12 +108,12 @@ class ContactItem extends React.Component {
         <div className="flip-card-inner shadow">
           <div className='flip-card-front rounded'>
             <div>
-              <p className='my-auto font-weight-bold'><h6 className="display-4 text-primary mb-4">{friend.name}{' '}{friend.lastname}</h6></p>
+              <p className='my-auto font-weight-bold'><h6 className="display-4 text-primary mb-4">{this.state.friend.name}{' '}{this.state.friend.lastname}</h6></p>
             </div>
             <hr />
             <div className="my-5">
-              <p className='my-auto font-weight-bold'>Phone:<h6 className="display-4">{friend.phone}</h6></p>
-              <p className='my-auto font-weight-bold'>E-mail:<h6 className="display-4">{friend.email}</h6></p>
+              <p className='my-auto font-weight-bold'>Phone:<h6 className="display-4">{this.state.friend.phone}</h6></p>
+              <p className='my-auto font-weight-bold'>E-mail:<h6 className="display-4">{this.state.friend.email}</h6></p>
             </div>
           </div>
           {createButtons()}
