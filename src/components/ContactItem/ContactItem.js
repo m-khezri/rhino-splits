@@ -5,7 +5,7 @@ import friendsShape from '../../helpers/propz/friendsShape';
 import authRequests from '../../helpers/data/authRequests';
 import { Input } from 'reactstrap';
 
-const defaulContact = {
+const defaultContact = {
   name: '',
   lastname: '',
   email: '',
@@ -22,7 +22,7 @@ class ContactItem extends React.Component {
 
   state = {
     friend: this.props.friend,
-    newContact: defaulContact,
+    newContact: defaultContact,
   }
 
   componentWillUpdate(nextProps) {
