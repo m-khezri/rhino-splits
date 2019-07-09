@@ -37,11 +37,11 @@ class ContactItem extends React.Component {
     deleteSingleFriend(friend.id);
   }
 
-  editEvent = (name, e) => {
+  editEvent = (x, e) => {
     console.error('e', e);
     e.preventDefault();
     const tempContact = { ...this.state.newContact };
-    tempContact[name] = e.target.value;
+    tempContact[x] = e.target.value;
     this.setState({ newContact: tempContact });
   }
 
