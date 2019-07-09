@@ -18,17 +18,15 @@ class ContactItem extends React.Component {
     friend: friendsShape,
     deleteSingleFriend: PropTypes.func,
     passFriendToEdit: PropTypes.func,
+    formSubmitEvent: PropTypes.func,
   }
 
   state = {
-    friend: this.props.friend,
-    newContact: defaultContact,
+    friend: defaultContact,
   }
 
-  componentWillUpdate(nextProps) {
-    if (nextProps.friend !== this.props.friend && nextProps.friend.name) {
-      this.setState({ newContact: nextProps.friend.name });
-    }
+  componentDidMount() {
+    this.setState({ friend: this.props.friend });
   }
 
   deleteEvent = (e) => {
@@ -37,21 +35,29 @@ class ContactItem extends React.Component {
     deleteSingleFriend(friend.id);
   }
 
-  editEvent = (name, e) => {
-    console.error('e', e);
+  changeValue = (x, e) => {
     e.preventDefault();
-    const tempContact = { ...this.state.newContact };
-    tempContact[name] = e.target.value;
-    this.setState({ newContact: tempContact });
+    const tempContact = { ...this.state.friend };
+    tempContact[x] = e.target.value;
+    this.setState({ friend: tempContact });
   }
 
-  firstnamechange = e => this.editEvent('name', e);
-  lastnamechange = e => this.editEvent('lastname', e);
-  phonechange = e => this.editEvent('phone', e);
-  emailchange = e => this.editEvent('email', e);
+  editEvent = (e) => {
+    e.preventDefault();
+    const updateEvent = { ...this.state.friend };
+    this.props.formSubmitEvent(updateEvent, true);
+  }
+
+  firstnamechange = e => this.changeValue('name', e);
+
+  lastnamechange = e => this.changeValue('lastname', e);
+
+  phonechange = e => this.changeValue('phone', e);
+
+  emailchange = e => this.changeValue('email', e);
 
   render() {
-    const taco = this.state.newContact;
+    // const taco = this.state.friend;
     const uid = authRequests.getCurrentUid();
 
     const createButtons = () => {
@@ -63,32 +69,28 @@ class ContactItem extends React.Component {
               className="my-1"
               type="text"
               id="name"
-              placeholder={this.state.friend.name}
-              value={taco.name}
+              value={this.state.friend.name}
               onChange={this.firstnamechange}
             />
             <Input
               className="my-1"
               type="text"
               id="lastname"
-              placeholder={this.state.friend.lastname}
-              value={taco.lastname}
+              value={this.state.friend.lastname}
               onChange={this.lastnamechange}
             />
             <Input
               className="my-1"
               type="text"
               id="phone"
-              placeholder={this.state.friend.phone}
-              value={taco.phone}
+              value={this.state.friend.phone}
               onChange={this.phonechange}
             />
             <Input
               className="my-1"
               type="text"
               id="email"
-              placeholder={this.state.friend.email}
-              value={taco.email}
+              value={this.state.friend.email}
               onChange={this.emailchange}
             />
 

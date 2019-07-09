@@ -9,16 +9,18 @@ class ContactsList extends React.Component {
     friends: PropTypes.arrayOf(friendsShape),
     deleteSingleFriend: PropTypes.func,
     passFriendToEdit: PropTypes.func,
+    formSubmitEvent: PropTypes.func,
   }
 
   render() {
-    const { friends, deleteSingleFriend, passFriendToEdit } = this.props;
+    const { friends, deleteSingleFriend, passFriendToEdit, formSubmitEvent } = this.props;
     const ContactItemComponents = friends.map(friend => (
       <ContactItem
         friend={friend}
         key={friend.id}
         deleteSingleFriend={deleteSingleFriend}
         passFriendToEdit={passFriendToEdit}
+        formSubmitEvent={formSubmitEvent}
       />
     ));
     return (

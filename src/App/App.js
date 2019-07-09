@@ -66,10 +66,13 @@ class App extends Component {
       .catch(err => console.error('error with delete single', err));
   }
 
-  formSubmitEvent = (newContact) => {
-    const { isEditing, editId } = this.state;
+  formSubmitEvent = (newContact, isEditing) => {
+    // const { isEditing, editId } = this.state;
     if (isEditing) {
-      friendsRequests.putRequest(editId, newContact)
+      const friendEditing = { ...newContact };
+      const editId = newContact.id;
+      delete friendEditing.id;
+      friendsRequests.putRequest(editId, friendEditing)
         .then(() => {
           friendsRequests.getRequest()
             .then((friends) => {
@@ -126,6 +129,7 @@ class App extends Component {
               friends={friends}
               deleteSingleFriend={this.deleteOne}
               passFriendToEdit={this.passFriendToEdit}
+              formSubmitEvent={this.formSubmitEvent}
             />
           </div>
         </div>
