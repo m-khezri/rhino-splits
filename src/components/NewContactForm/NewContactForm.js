@@ -51,7 +51,7 @@ class newContactForm extends React.Component {
     const { onSubmit } = this.props;
     const myFriend = { ...this.state.newContact };
     myFriend.uid = authRequests.getCurrentUid();
-    onSubmit(myFriend);
+    onSubmit(myFriend, false);
     this.setState({ newFriend: defaultContact });
     this.toggle();
   }
