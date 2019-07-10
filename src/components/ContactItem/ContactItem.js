@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import friendsShape from '../../helpers/propz/friendsShape';
 import authRequests from '../../helpers/data/authRequests';
 import { Input } from 'reactstrap';
+import swal from 'sweetalert';
 
 const defaultContact = {
   name: '',
@@ -33,6 +34,7 @@ class ContactItem extends React.Component {
     e.preventDefault();
     const { deleteSingleFriend, friend } = this.props;
     deleteSingleFriend(friend.id);
+    swal('This contact has been deleted!', '', 'warning');
   }
 
   changeValue = (x, e) => {
@@ -46,6 +48,7 @@ class ContactItem extends React.Component {
     e.preventDefault();
     const updateEvent = { ...this.state.friend };
     this.props.formSubmitEvent(updateEvent, true);
+    swal('Contact sucessfully updated', '', 'success');
   }
 
   firstnamechange = e => this.changeValue('name', e);
@@ -57,7 +60,6 @@ class ContactItem extends React.Component {
   emailchange = e => this.changeValue('email', e);
 
   render() {
-    // const taco = this.state.friend;
     const uid = authRequests.getCurrentUid();
 
     const createButtons = () => {
