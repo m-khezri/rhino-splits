@@ -30,11 +30,26 @@ class ContactItem extends React.Component {
     this.setState({ friend: this.props.friend });
   }
 
+
   deleteEvent = (e) => {
-    e.preventDefault();
-    const { deleteSingleFriend, friend } = this.props;
-    deleteSingleFriend(friend.id);
-    swal('This contact has been deleted!', '', 'warning');
+
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this contact!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+        if (willDelete) {
+          e.preventDefault();
+          const { deleteSingleFriend, friend } = this.props;
+          deleteSingleFriend(friend.id);
+          swal("Poof! The contact has been deleted!", {
+            icon: "success",
+          });
+        }
+      });
   }
 
   changeValue = (x, e) => {
