@@ -45,6 +45,7 @@ class PaymentModal extends React.Component {
     const { onSubmit } = this.props;
     const myPayment = { ...this.state.newPayment };
     myPayment.uid = authRequests.getCurrentUid();
+    console.error(myPayment);
     onSubmit(myPayment);
     this.setState({ newPayment: defaultPayment });
     this.toggle();

@@ -3,7 +3,6 @@ import './TransactionsItem.scss';
 import formatPrice from '../../helpers/formatPrice';
 
 
-
 class TransactionsItem extends React.Component {
   render() {
     const { transaction } = this.props;
