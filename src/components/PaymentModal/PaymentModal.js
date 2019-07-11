@@ -4,7 +4,6 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, La
 import authRequests from '../../helpers/data/authRequests';
 import PropTypes from 'prop-types';
 
-
 const defaultPayment = {
   date: '',
   subject: '',
@@ -12,13 +11,10 @@ const defaultPayment = {
   uid: '',
 };
 
-
 class PaymentModal extends React.Component {
-
   static propTypes = {
     onSubmit: PropTypes.func,
   }
-
 
   state = {
     newPayment: defaultPayment,
@@ -38,20 +34,18 @@ class PaymentModal extends React.Component {
   }
   toggle = this.toggle.bind(this);
 
-
   dateChange = e => this.submitPayment('date', e);
 
   subjectChange = e => this.submitPayment('subject', e);
 
   priceChange = e => this.submitPayment('price', e);
 
-
   formSubmit = (e) => {
     e.preventDefault();
     const { onSubmit } = this.props;
     const myPayment = { ...this.state.newPayment };
     myPayment.uid = authRequests.getCurrentUid();
-    onSubmit(myPayment, false);
+    onSubmit(myPayment);
     this.setState({ newPayment: defaultPayment });
     this.toggle();
   }
@@ -59,7 +53,7 @@ class PaymentModal extends React.Component {
   render() {
     const { newPayment } = this.state;
     return (
-      <div className="control-bar-container m-0 p-4">
+      <div className="paymentModal-container">
         <div>
           <Button className="btn btn-success" color="success" onClick={this.toggle}>{this.props.buttonLabel}Make a payment</Button>
           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>

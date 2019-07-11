@@ -3,6 +3,7 @@ import './TransactionsItem.scss';
 import formatPrice from '../../helpers/formatPrice';
 
 
+
 class TransactionsItem extends React.Component {
   render() {
     const { transaction } = this.props;
@@ -12,11 +13,9 @@ class TransactionsItem extends React.Component {
           <div className="w-25 text-left">
             <p className="my-auto">{transaction.date}</p>
           </div>
-
           <div className="w-50 text-left">
             <p className="my-auto">{transaction.subject}</p>
           </div>
-
           <div className="w-25 text-right">
             <p className="my-auto">{formatPrice(transaction.amount)}</p>
           </div>
@@ -26,6 +25,8 @@ class TransactionsItem extends React.Component {
     );
   }
 }
+
+
 
 export default TransactionsItem;
 

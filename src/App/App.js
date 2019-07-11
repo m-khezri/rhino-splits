@@ -9,7 +9,6 @@ import transactionsRequests from '../helpers/data/transactionsRequests';
 import TransactionHistroy from '../components/TransactionsHistory/TransactionsHistory';
 import ContactsList from '../components/ContactsList/ContactsList';
 import NewContactForm from '../components/NewContactForm/NewContactForm';
-import PaymentModal from '../components/PaymentModal/PaymentModal';
 
 class App extends Component {
   state = {
@@ -96,18 +95,6 @@ class App extends Component {
   passFriendToEdit = friendId => this.setState({ isEditing: true, editId: friendId });
 
 
-  formSubmitEvent = (newPayment) => {
-    transactionsRequests.postRequest(newPayment)
-      .then(() => {
-        transactionsRequests.getRequest()
-          .then((payments) => {
-            this.setState({ payments });
-          });
-      })
-      .catch(err => console.error('error with payments post', err));
-  }
-
-
   render() {
     const {
       authed,
@@ -136,7 +123,9 @@ class App extends Component {
         <MyNavbar
           isAuthed={authed} logoutClickEvent={logoutClickEvent} />
         <div className="components-container d-flex flex-wrap">
-          <TransactionHistroy transactions={this.state.transactions} />
+          <TransactionHistroy
+            transactions={this.state.transactions}
+          />
           <div className='right-components-cont d-flex flex-column flex-wrap bg-secondary'>
             <NewContactForm onSubmit={this.formSubmitEvent} isEditing={isEditing} editId={editId} />
             <ContactsList
@@ -145,7 +134,6 @@ class App extends Component {
               passFriendToEdit={this.passFriendToEdit}
               formSubmitEvent={this.formSubmitEvent}
             />
-            <PaymentModal onSubmit={this.formSubmitEvent} />
           </div>
         </div>
       </div>
