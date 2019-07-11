@@ -30,7 +30,6 @@ class ContactItem extends React.Component {
     this.setState({ friend: this.props.friend });
   }
 
-
   deleteEvent = (e) => {
 
     swal({
@@ -124,7 +123,7 @@ class ContactItem extends React.Component {
 
     return (
       <div className="flip-card ">
-        <div className="flip-card-inner shadow">
+        <div className="flip-card-inner shadow-sm">
           <div className='flip-card-front rounded'>
             <div>
               <p className='my-auto font-weight-bold'><h6 className="display-4 text-primary mb-4">{this.state.friend.name}{' '}{this.state.friend.lastname}</h6></p>

@@ -11,7 +11,6 @@ class TransactionHistroy extends React.Component {
   }
 
   render() {
-
     const { transactions } = this.props;
     const transactionItemComponents = transactions.map(transaction => (
       <TransactionsItem
