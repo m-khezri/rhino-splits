@@ -1,8 +1,8 @@
 import React from 'react';
 import './PaymentModal.scss';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Col, Input } from 'reactstrap';
-import authRequests from '../../helpers/data/authRequests';
 import PropTypes from 'prop-types';
+import authRequests from '../../helpers/data/authRequests';
 
 const defaultPayment = {
   date: '',
@@ -21,17 +21,6 @@ class PaymentModal extends React.Component {
     newPayment: defaultPayment,
   }
 
-  paymentSubmitEvent = (e) => {
-    console.log('clicked', e);
-    e.preventDefault();
-    const { onSubmit } = this.props;
-    const myPayment = { ...this.state.newPayment };
-    myPayment.uid = authRequests.getCurrentUid();
-    onSubmit(myPayment);
-    this.setState({ newPayment: defaultPayment });
-    this.toggle();
-  }
-
 
   formFieldStringState = (name, e) => {
     e.preventDefault();
@@ -39,6 +28,17 @@ class PaymentModal extends React.Component {
     tempPayment[name] = e.target.value;
     this.setState({ newPayment: tempPayment });
   }
+
+  paymentSubmitEvent = (e) => {
+    e.preventDefault();
+    const { onSubmit } = this.props;
+    const myPayment = { ...this.state.newPayment };
+    myPayment.uid = authRequests.getCurrentUid();
+    onSubmit(myPayment, false);
+    this.setState({ newPayment: defaultPayment });
+    this.toggle();
+  }
+
 
   toggle() {
     this.setState(prevState => ({

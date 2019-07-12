@@ -10,6 +10,7 @@ import TransactionHistroy from '../components/TransactionsHistory/TransactionsHi
 import ContactsList from '../components/ContactsList/ContactsList';
 import NewContactForm from '../components/NewContactForm/NewContactForm';
 
+
 class App extends Component {
   state = {
     authed: false,
@@ -22,11 +23,6 @@ class App extends Component {
   componentDidMount() {
     connection();
 
-    transactionsRequests.getRequest()
-      .then((transactions) => {
-        this.setState({ transactions });
-      })
-      .catch(err => console.error('error with listing GET', err));
 
     friendsRequests.getRequest()
       .then((friends) => {
@@ -92,8 +88,19 @@ class App extends Component {
     }
   }
 
-  passFriendToEdit = friendId => this.setState({ isEditing: true, editId: friendId });
+  paymentSubmitEvent = (newPayment) => {
+    transactionsRequests.postRequest(newPayment)
+      .then(() => {
+        transactionsRequests.getRequest()
+          .then((payments) => {
+            this.setState({ payments });
+          });
+      })
+      .catch(err => console.error('error with payment post', err));
+  }
 
+
+  passFriendToEdit = friendId => this.setState({ isEditing: true, editId: friendId });
 
   render() {
     const {
@@ -133,6 +140,7 @@ class App extends Component {
               deleteSingleFriend={this.deleteOne}
               passFriendToEdit={this.passFriendToEdit}
               formSubmitEvent={this.formSubmitEvent}
+              paymentSubmitEvent={this.paymentSubmitEvent}
             />
           </div>
         </div>

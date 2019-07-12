@@ -19,6 +19,9 @@ const getRequest = () => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
+const postRequest = payment => axios.post(`${firebaseUrl}/transactions.json`, payment);
+
 export default {
   getRequest,
+  postRequest,
 };
