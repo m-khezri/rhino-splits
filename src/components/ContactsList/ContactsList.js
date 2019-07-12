@@ -26,7 +26,6 @@ class ContactsList extends React.Component {
     ));
     return (
       <div className="contacts-list-container m-0 p-1">
-        <h5 className="text-info m-3">Contacts list</h5>
         <div className="cards-holder">
           {ContactItemComponents}
         </div>
