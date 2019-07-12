@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import friendsShape from '../../helpers/propz/friendsShape';
 import authRequests from '../../helpers/data/authRequests';
 import PaymentModal from '../PaymentModal/PaymentModal';
-import transactionsRequests from '../../helpers/data/transactionsRequests';
 import { Input } from 'reactstrap';
 import swal from 'sweetalert';
 
@@ -67,20 +66,6 @@ class ContactItem extends React.Component {
     swal('Contact sucessfully updated', '', 'success');
   }
 
-
-  formSubmitEvent = (newPayment) => {
-    transactionsRequests.postRequest(newPayment)
-      .then(() => {
-        transactionsRequests.getRequest()
-          .then((payments) => {
-            this.setState({ payments });
-          });
-      })
-      .catch(err => console.error('error with payments post', err));
-  }
-
-
-
   firstnamechange = e => this.changeValue('name', e);
 
   lastnamechange = e => this.changeValue('lastname', e);
@@ -126,8 +111,8 @@ class ContactItem extends React.Component {
               onChange={this.emailchange}
             />
 
-            <div className="btn-group btn-sm">
-              <PaymentModal />
+            <div className="btn-group btn-group-sm my-0">
+              <PaymentModal onSubmit={this.paymentSubmitEvent} />
               <button className="btn btn-primary" onClick={this.editEvent}>Update</button>
               <button className="btn btn-danger" onClick={this.deleteEvent}>Delete</button>
             </div>

@@ -1,9 +1,24 @@
 import React from 'react';
 import './TransactionsItem.scss';
 import formatPrice from '../../helpers/formatPrice';
+import transactionsShape from '../../helpers/propz/transactionsShape';
 
+const defaultPayment = {
+  date: '',
+  subject: '',
+  price: 0,
+}
 
 class TransactionsItem extends React.Component {
+
+  static propTypes = {
+    transaction: transactionsShape,
+  }
+
+  state = {
+    transaction: defaultPayment,
+  }
+
   render() {
     const { transaction } = this.props;
     return (
@@ -24,8 +39,6 @@ class TransactionsItem extends React.Component {
     );
   }
 }
-
-
 
 export default TransactionsItem;
 

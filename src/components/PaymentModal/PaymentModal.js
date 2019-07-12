@@ -17,10 +17,23 @@ class PaymentModal extends React.Component {
   }
 
   state = {
+    modal: false,
     newPayment: defaultPayment,
   }
 
-  submitPayment = (name, e) => {
+  paymentSubmitEvent = (e) => {
+    console.log('clicked', e);
+    e.preventDefault();
+    const { onSubmit } = this.props;
+    const myPayment = { ...this.state.newPayment };
+    myPayment.uid = authRequests.getCurrentUid();
+    onSubmit(myPayment);
+    this.setState({ newPayment: defaultPayment });
+    this.toggle();
+  }
+
+
+  formFieldStringState = (name, e) => {
     e.preventDefault();
     const tempPayment = { ...this.state.newPayment };
     tempPayment[name] = e.target.value;
@@ -34,22 +47,12 @@ class PaymentModal extends React.Component {
   }
   toggle = this.toggle.bind(this);
 
-  dateChange = e => this.submitPayment('date', e);
+  dateChange = e => this.formFieldStringState('date', e);
 
-  subjectChange = e => this.submitPayment('subject', e);
+  subjectChange = e => this.formFieldStringState('subject', e);
 
-  priceChange = e => this.submitPayment('price', e);
+  priceChange = e => this.formFieldStringState('price', e);
 
-  formSubmit = (e) => {
-    e.preventDefault();
-    const { onSubmit } = this.props;
-    const myPayment = { ...this.state.newPayment };
-    myPayment.uid = authRequests.getCurrentUid();
-    console.error(myPayment);
-    onSubmit(myPayment);
-    this.setState({ newPayment: defaultPayment });
-    this.toggle();
-  }
 
   render() {
     const { newPayment } = this.state;
@@ -61,7 +64,7 @@ class PaymentModal extends React.Component {
             <ModalHeader toggle={this.toggle}>Make a payment</ModalHeader>
             <ModalBody>
 
-              <Form onSubmit={this.formSubmit}>
+              <Form onSubmit={this.paymentSubmitEvent}>
                 <FormGroup row>
                   <Label className="mt-3" htmlfor="firstName" sm={6}>Date</Label>
                   <Col sm={12}>
@@ -100,7 +103,7 @@ class PaymentModal extends React.Component {
 
             </ModalBody>
             <ModalFooter>
-              <Button color="primary" onClick={this.formSubmit}>Pay Now</Button>
+              <Button color="primary" onClick={this.paymentSubmitEvent}>Pay Now</Button>
             </ModalFooter>
           </Modal>
         </div>
