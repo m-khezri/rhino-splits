@@ -5,7 +5,6 @@ import transactionsShape from '../../helpers/propz/transactionsShape';
 import TransactionsItem from '../TransactionsItem/TransactionsItem';
 
 class TransactionHistroy extends React.Component {
-
   static propTypes = {
     transactions: PropTypes.arrayOf(transactionsShape),
   }

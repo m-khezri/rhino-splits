@@ -13,7 +13,10 @@ class ContactsList extends React.Component {
   }
 
   render() {
-    const { friends, deleteSingleFriend, passFriendToEdit, formSubmitEvent } = this.props;
+    const {
+      friends, deleteSingleFriend, passFriendToEdit, formSubmitEvent,
+    } = this.props;
+
     const ContactItemComponents = friends.map(friend => (
       <ContactItem
         friend={friend}

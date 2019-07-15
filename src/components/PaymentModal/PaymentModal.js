@@ -1,13 +1,16 @@
 import React from 'react';
 import './PaymentModal.scss';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Col, Input } from 'reactstrap';
+import {
+  Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Col, Input,
+} from 'reactstrap';
 import PropTypes from 'prop-types';
+import formatPrice from '../../helpers/formatPrice';
 import authRequests from '../../helpers/data/authRequests';
 
 const defaultPayment = {
   date: '',
   subject: '',
-  amount: 0,
+  amount: 0.00,
   uid: '',
 };
 
@@ -20,7 +23,6 @@ class PaymentModal extends React.Component {
     modal: false,
     newPayment: defaultPayment,
   }
-
 
   formFieldStringState = (name, e) => {
     e.preventDefault();
@@ -42,9 +44,10 @@ class PaymentModal extends React.Component {
 
   toggle() {
     this.setState(prevState => ({
-      modal: !prevState.modal
+      modal: !prevState.modal,
     }));
   }
+
   toggle = this.toggle.bind(this);
 
   dateChange = e => this.formFieldStringState('date', e);
@@ -93,8 +96,8 @@ class PaymentModal extends React.Component {
                     <Input
                       type="amount"
                       id="amount"
-                      placeholder="$"
-                      value={newPayment.amount}
+                      placeholder="$0.00"
+                      value={formatPrice(newPayment.amount)}
                       onChange={this.amountChange}
                     />
                   </Col>

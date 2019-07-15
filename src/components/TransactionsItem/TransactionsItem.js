@@ -1,12 +1,11 @@
 import React from 'react';
 import './TransactionsItem.scss';
+import PropTypes from 'prop-types';
 import formatPrice from '../../helpers/formatPrice';
 import transactionsShape from '../../helpers/propz/transactionsShape';
-import PropTypes from 'prop-types';
 
 
 class TransactionsItem extends React.Component {
-
   static propTypes = {
     transaction: transactionsShape,
     paymentSubmitEvent: PropTypes.func,
