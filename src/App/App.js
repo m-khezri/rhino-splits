@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.scss';
 import firebase from 'firebase/app';
+import 'firebase/auth';
+
 import connection from '../helpers/data/connection';
 import MyNavbar from '../components/MyNavar/MyNavbar';
 import authRequests from '../helpers/data/authRequests';
@@ -20,18 +22,27 @@ class App extends Component {
     editId: '-1',
   }
 
-  componentDidMount() {
-    connection();
-
-
-    friendsRequests.getRequest()
-      .then((friends) => {
-        this.setState({ friends });
+  getTransactions = () => {
+    const { uid } = firebase.auth().currentUser;
+    transactionsRequests.getRequest(uid)
+      .then((transactions) => {
+        this.setState({ transactions });
       })
       .catch(err => console.error('error with listing GET', err));
+  }
 
+  componentDidMount() {
+    connection();
     this.removeListener = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
+        this.getTransactions();
+
+        friendsRequests.getRequest()
+          .then((friends) => {
+            this.setState({ friends });
+          })
+          .catch(err => console.error('error with listing GET', err));
+
         this.setState({
           authed: true,
         });
@@ -63,7 +74,6 @@ class App extends Component {
   }
 
   formSubmitEvent = (newContact, isEditing) => {
-    // const { isEditing, editId } = this.state;
     if (isEditing) {
       const friendEditing = { ...newContact };
       const editId = newContact.id;
@@ -91,10 +101,7 @@ class App extends Component {
   paymentSubmitEvent = (newPayment) => {
     transactionsRequests.postRequest(newPayment)
       .then(() => {
-        transactionsRequests.getRequest()
-          .then((payments) => {
-            this.setState({ payments });
-          });
+        this.getTransactions();
       })
       .catch(err => console.error('error with payment post', err));
   }

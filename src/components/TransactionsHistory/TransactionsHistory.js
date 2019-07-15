@@ -13,6 +13,7 @@ class TransactionHistroy extends React.Component {
   render() {
     const { transactions } = this.props;
     const transactionItemComponents = transactions.map(transaction => (
+      // <h2>hi</h2>
       <TransactionsItem
         transaction={transaction}
         key={transaction.id}
@@ -32,7 +33,7 @@ class TransactionHistroy extends React.Component {
           </div>
 
           <div className="w-25 text-right">
-            <p className="my-auto"><b>Price</b></p>
+            <p className="my-auto"><b>Amount</b></p>
           </div>
 
         </div>

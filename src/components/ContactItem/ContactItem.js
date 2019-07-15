@@ -1,11 +1,11 @@
 import React from 'react';
 import './ContactItem.scss';
 import PropTypes from 'prop-types';
+import { Input } from 'reactstrap';
+import swal from 'sweetalert';
 import friendsShape from '../../helpers/propz/friendsShape';
 import authRequests from '../../helpers/data/authRequests';
 import PaymentModal from '../PaymentModal/PaymentModal';
-import { Input } from 'reactstrap';
-import swal from 'sweetalert';
 
 const defaultContact = {
   name: '',
@@ -112,7 +112,7 @@ class ContactItem extends React.Component {
             />
 
             <div className="btn-group btn-group-sm my-0">
-              <PaymentModal onSubmit={this.paymentSubmitEvent} />
+              <PaymentModal onSubmit={this.props.paymentSubmitEvent} />
               <button className="btn btn-primary" onClick={this.editEvent}>Update</button>
               <button className="btn btn-danger" onClick={this.deleteEvent}>Delete</button>
             </div>

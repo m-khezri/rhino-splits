@@ -21,7 +21,7 @@ class ContactsList extends React.Component {
         deleteSingleFriend={deleteSingleFriend}
         passFriendToEdit={passFriendToEdit}
         formSubmitEvent={formSubmitEvent}
-        paymentSubmitEvent={this.paymentSubmitEvent}
+        paymentSubmitEvent={this.props.paymentSubmitEvent}
       />
     ));
     return (

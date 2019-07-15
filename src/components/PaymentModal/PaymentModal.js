@@ -7,7 +7,7 @@ import authRequests from '../../helpers/data/authRequests';
 const defaultPayment = {
   date: '',
   subject: '',
-  price: 0,
+  amount: 0,
   uid: '',
 };
 
@@ -51,7 +51,7 @@ class PaymentModal extends React.Component {
 
   subjectChange = e => this.formFieldStringState('subject', e);
 
-  priceChange = e => this.formFieldStringState('price', e);
+  amountChange = e => this.formFieldStringState('amount', e);
 
 
   render() {
@@ -64,7 +64,7 @@ class PaymentModal extends React.Component {
             <ModalHeader toggle={this.toggle}>Make a payment</ModalHeader>
             <ModalBody>
 
-              <Form onSubmit={this.paymentSubmitEvent}>
+              <Form>
                 <FormGroup row>
                   <Label className="mt-3" htmlfor="firstName" sm={6}>Date</Label>
                   <Col sm={12}>
@@ -88,14 +88,14 @@ class PaymentModal extends React.Component {
                     />
                   </Col>
 
-                  <Label className="mt-3" htmlfor="price" sm={6}>Price</Label>
+                  <Label className="mt-3" htmlfor="amount" sm={6}>Amount</Label>
                   <Col sm={12}>
                     <Input
-                      type="price"
-                      id="price"
+                      type="amount"
+                      id="amount"
                       placeholder="$"
-                      value={newPayment.price}
-                      onChange={this.priceChange}
+                      value={newPayment.amount}
+                      onChange={this.amountChange}
                     />
                   </Col>
                 </FormGroup>
