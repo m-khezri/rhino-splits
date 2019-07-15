@@ -1,8 +1,10 @@
 .navbar{
-height: 10vh;
-  background-color: #70A1FF;
+height: 15vh;
+  background-color: #fff;
+  border-bottom: 1px solid lightgray;
 }
-.navbar-brand,
-.nav-link{
-  color:#fff;
+
+img{
+  max-width:100px;
+  margin-left: 30px;
 }

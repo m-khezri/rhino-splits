@@ -1,10 +1,11 @@
 import React from 'react';
 import './ContactItem.scss';
 import PropTypes from 'prop-types';
-import friendsShape from '../../helpers/propz/friendsShape';
-import authRequests from '../../helpers/data/authRequests';
 import { Input } from 'reactstrap';
 import swal from 'sweetalert';
+import friendsShape from '../../helpers/propz/friendsShape';
+import authRequests from '../../helpers/data/authRequests';
+import PaymentModal from '../PaymentModal/PaymentModal';
 
 const defaultContact = {
   name: '',
@@ -29,7 +30,6 @@ class ContactItem extends React.Component {
   componentDidMount() {
     this.setState({ friend: this.props.friend });
   }
-
 
   deleteEvent = (e) => {
 
@@ -111,8 +111,8 @@ class ContactItem extends React.Component {
               onChange={this.emailchange}
             />
 
-            <div className="btn-group btn-group-sm my-2">
-              <button className="btn btn-success">Make a payment</button>
+            <div className="btn-group btn-group-sm my-0">
+              <PaymentModal onSubmit={this.props.paymentSubmitEvent} />
               <button className="btn btn-primary" onClick={this.editEvent}>Update</button>
               <button className="btn btn-danger" onClick={this.deleteEvent}>Delete</button>
             </div>
@@ -124,7 +124,7 @@ class ContactItem extends React.Component {
 
     return (
       <div className="flip-card ">
-        <div className="flip-card-inner shadow">
+        <div className="flip-card-inner shadow-sm">
           <div className='flip-card-front rounded'>
             <div>
               <p className='my-auto font-weight-bold'><h6 className="display-4 text-primary mb-4">{this.state.friend.name}{' '}{this.state.friend.lastname}</h6></p>

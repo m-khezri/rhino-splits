@@ -3,9 +3,9 @@ import apiKeys from '../apiKeys';
 
 const firebaseUrl = apiKeys.firebaseConfig.databaseURL;
 
-const getRequest = () => new Promise((resolve, reject) => {
+const getRequest = uid => new Promise((resolve, reject) => {
   axios
-    .get(`${firebaseUrl}/transactions.json`)
+    .get(`${firebaseUrl}/transactions.json?orderBy="uid"&equalTo="${uid}"`)
     .then((res) => {
       const transactions = [];
       if (res.data !== null) {
@@ -19,6 +19,9 @@ const getRequest = () => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
+const postRequest = payment => axios.post(`${firebaseUrl}/transactions.json`, payment);
+
 export default {
   getRequest,
+  postRequest,
 };
