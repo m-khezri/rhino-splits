@@ -103,7 +103,6 @@ class PaymentModal extends React.Component {
                   </Col>
                 </FormGroup>
               </Form>
-
             </ModalBody>
             <ModalFooter>
               <Button color="primary" onClick={this.paymentSubmitEvent}>Pay Now</Button>
