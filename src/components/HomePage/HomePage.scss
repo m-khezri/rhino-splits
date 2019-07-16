@@ -23,9 +23,8 @@
   -webkit-text-fill-color: transparent;
 
   -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
   animation-name: h1;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-timing-function: ease;
 }
 
@@ -35,7 +34,7 @@
   bottom: 46%;
   color: #ced6e0;
   animation-name: h5;
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-timing-function: ease;
 }
 
@@ -44,7 +43,7 @@
   right: 60%;
   bottom: 40%;
   animation-name: p;
-  animation-duration: 7s;
+  animation-duration: 5s;
   animation-timing-function: ease;
 }
 

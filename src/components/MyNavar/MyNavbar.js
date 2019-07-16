@@ -5,7 +5,7 @@ import {
 } from 'reactstrap';
 import firebase from 'firebase';
 import authRequests from '../../helpers/data/authRequests';
-import logo from '../../images/logo.png';
+import logo from '../../images/logo.svg';
 
 class MyNavbar extends React.Component {
   state = {
