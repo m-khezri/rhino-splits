@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import friendsShape from '../../helpers/propz/friendsShape';
 import ContactItem from '../ContactItem/ContactItem';
+import listBg from '../../images/listBg.svg';
 import './ContactsList.scss';
 
 class ContactsList extends React.Component {
@@ -30,6 +31,7 @@ class ContactsList extends React.Component {
     return (
       <div className="contacts-list-container m-0 p-1">
         <div className="cards-holder">
+          <img className="listBg" src={listBg} alt="Logo" />
           {ContactItemComponents}
         </div>
       </div>

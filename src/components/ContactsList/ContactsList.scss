@@ -11,4 +11,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  position: relative;
+}
+
+.listBg{
+  max-width: 40%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
