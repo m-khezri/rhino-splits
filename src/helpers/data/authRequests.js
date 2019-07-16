@@ -8,13 +8,10 @@ const authenticate = () => {
 
 const logoutUser = () => firebase.auth().signOut();
 const getCurrentUid = () => firebase.auth().currentUser.uid;
-const getCurrentUserName = () => firebase.auth().currentUser.displayName;
-const getCurrentUserPhoto = () => firebase.auth().currentUser.photoURL;
 
 export default {
   authenticate,
   logoutUser,
   getCurrentUid,
-  getCurrentUserName,
-  getCurrentUserPhoto,
+
 };
