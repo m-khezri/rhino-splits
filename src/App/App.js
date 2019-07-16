@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './App.scss';
 import firebase from 'firebase/app';
 import 'firebase/auth';
-
 import connection from '../helpers/data/connection';
 import MyNavbar from '../components/MyNavar/MyNavbar';
+import HomePage from '../components/HomePage/HomePage';
 import authRequests from '../helpers/data/authRequests';
 import friendsRequests from '../helpers/data/friendsRequests';
 import transactionsRequests from '../helpers/data/transactionsRequests';
@@ -58,6 +58,7 @@ class App extends Component {
     this.removeListener();
   }
 
+
   isAuthenticated = () => {
     this.setState({ authed: true });
   }
@@ -72,6 +73,7 @@ class App extends Component {
       })
       .catch(err => console.error('error with delete single', err));
   }
+
 
   formSubmitEvent = (newContact, isEditing) => {
     if (isEditing) {
@@ -129,6 +131,7 @@ class App extends Component {
           <MyNavbar isAuthed={authed}
             isAuthenticated={this.isAuthenticated}
             logoutClickEvent={logoutClickEvent} />
+          <HomePage />
         </div>
       );
     }

@@ -67,7 +67,7 @@ class MyNavbar extends React.Component {
                   </div>
                   :
                   <li>
-                    <button className="btn btn-light" onClick={this.authenticateUser}>Login</button>
+                    <button className="btn btn-success btn-lg" onClick={this.authenticateUser}>Try It Now... </button>
                   </li>
                 }
               </li>

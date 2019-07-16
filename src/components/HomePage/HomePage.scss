@@ -1,0 +1,67 @@
+
+
+.main-holder{
+  height: 90vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.bg-img{
+  max-width: 80vh;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.title-h1{
+  position: absolute;
+  right: 55%;
+  bottom: 50%;
+  background: -webkit-linear-gradient(45deg, #FF3D9D,#70A1FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  animation-name: h1;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+}
+
+.title-h5{
+  position: absolute;
+  right: 55.3%;
+  bottom: 46%;
+  color: #ced6e0;
+  animation-name: h5;
+  animation-duration: 5s;
+  animation-timing-function: ease;
+}
+
+.title-p{
+  position: absolute;
+  right: 60%;
+  bottom: 40%;
+  animation-name: p;
+  animation-duration: 7s;
+  animation-timing-function: ease;
+}
+
+
+@keyframes h1 {
+  from {right:25%; bottom:50%;}
+  to {right:55%; bottom:50%;}
+}
+
+
+@keyframes h5 {
+  from {right:25%; bottom:46%;}
+  to {right:55.3%; bottom:46%;}
+}
+
+
+@keyframes p {
+  from {right:25%; bottom:40%;}
+  to {right:60%; bottom:40%;}
+}
