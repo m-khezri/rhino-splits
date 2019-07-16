@@ -47,12 +47,15 @@ class MyNavbar extends React.Component {
                       <DropdownToggle tag="a" href='#' className="nav-link text-primary" caret>
                         Profile
         </DropdownToggle>
-                      <DropdownMenu right>
+                      <DropdownMenu right className="text-center">
                         <DropdownItem disabled>
-                          <img className="user-photo shadow bg-light pt-2 ml-2" src={firebase.auth().currentUser.photoURL} alt="user" />
+                          <img className="user-photo shadow bg-light pt-2 ml-0" src={firebase.auth().currentUser.photoURL} alt="user" />
                         </DropdownItem>
                         <DropdownItem disabled>
-                          <p className="welcome mt-2">Hello, <span><b>{firebase.auth().currentUser.displayName}</b></span></p>
+                          <p className="welcome mt-2">Hi, <span><b>{firebase.auth().currentUser.displayName}</b></span></p>
+                        </DropdownItem>
+                        <DropdownItem disabled>
+                          <p className="welcome mt-2 text-center">{firebase.auth().currentUser.email}</p>
                         </DropdownItem>
                         <DropdownItem divider />
                         <DropdownItem>

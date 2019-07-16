@@ -67,15 +67,22 @@ class newContactForm extends React.Component {
     }
   }
 
-
   render() {
     const { newContact } = this.state;
     return (
       <div className="control-bar-container m-0">
         <div>
-          <Button className="btn btn-info btn-lg" color="success" onClick={this.toggle}>{this.props.buttonLabel}
-            <i className="mr-2 large material-icons">person_add</i>Add new friend</Button>
+          <div className="d-flex">
+            <div>
+              <Button className="btn btn-info btn-lg" color="success" onClick={this.toggle}>{this.props.buttonLabel}
+                <i className="mr-2 large material-icons">person_add</i>Add new friend
+            </Button>
+            </div>
+            {/* <div className="mx-5 w-25">
+              <input class="form-control form-control-lg" type="search" placeholder="Search" aria-label="Search" value={this.inputSearch} onKeyup={this.handleInputChange} />
+            </div> */}
 
+          </div>
           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
             <ModalHeader toggle={this.toggle}>Create new contact</ModalHeader>
             <ModalBody>
