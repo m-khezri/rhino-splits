@@ -3,34 +3,33 @@
 
 Rhino Splits is my Front-End capstopne projects at NSS. This is online payment simulator that users can sign in with Google account and create a new friend or contact. User is able to edit and delete the current user as well as make a payment to a friend. I'm planing to keep working on this project and add reminder and sending notification for frineds who are supposed to pay you back. 
 
-* Live Demo:
-https://rhino-splits.firebaseapp.com
+* Live <a href="https://rhino-splits.firebaseapp.com"> Demo</a> 
 
 ## Screenshots
 
 ### Authentication view
-![Login page](./src/images/01.jpg)
+![loginview](src/images/01.jpg)
 
 ### Home page view
-![Home page](src/images/02.jpg)
+![Home page](https://github.com/m-khezri/rhino-splits/blob/master/src/images/02.JPG)
 
 ### Create a new contact
-![create a new contact page](src/images/03.jpg)
+![create a new contact page](https://github.com/m-khezri/rhino-splits/blob/master/src/images/03.JPG)
 
 ### Created a new contact
-![created contact](src/images/04.jpg)
+![created contact](https://github.com/m-khezri/rhino-splits/blob/master/src/images/04.JPG)
 
 ### Edit / Delete / make a payment
-![edit-delete-payment](src/images/05.jpg)
+![edit-delete-payment](https://github.com/m-khezri/rhino-splits/blob/master/src/images/05.JPG)
 
 ### Make a payment
-![make a payment](src/images/06.jpg)
+![make a payment](https://github.com/m-khezri/rhino-splits/blob/master/src/images/06.JPG)
 
 ### Transaction histoty
-![transaction](src/images/07.jpg)
+![transaction](https://github.com/m-khezri/rhino-splits/blob/master/src/images/07.JPG)
 
 ### Logout view
-![logout](src/images/08.jpg)
+![logout](https://github.com/m-khezri/rhino-splits/blob/master/src/images/08.JPG)
 
 ## Technologies Used
 * React
