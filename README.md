@@ -11,25 +11,25 @@ Rhino Splits is my Front-End capstopne projects at NSS. This is online payment s
 ![loginview](src/images/01.JPG)
 
 ### Home page view
-![Home page](https://github.com/m-khezri/rhino-splits/blob/master/src/images/02.JPG)
+![Home page](src/images/02.JPG)
 
 ### Create a new contact
-![create a new contact page](https://github.com/m-khezri/rhino-splits/blob/master/src/images/03.JPG)
+![create a new contact page](src/images/03.JPG)
 
 ### Created a new contact
-![created contact](https://github.com/m-khezri/rhino-splits/blob/master/src/images/04.JPG)
+![created contact](src/images/04.JPG)
 
 ### Edit / Delete / make a payment
-![edit-delete-payment](https://github.com/m-khezri/rhino-splits/blob/master/src/images/05.JPG)
+![edit-delete-payment](src/images/05.JPG)
 
 ### Make a payment
-![make a payment](https://github.com/m-khezri/rhino-splits/blob/master/src/images/06.JPG)
+![make a payment](src/images/06.JPG)
 
 ### Transaction histoty
-![transaction](https://github.com/m-khezri/rhino-splits/blob/master/src/images/07.JPG)
+![transaction](src/images/07.JPG)
 
 ### Logout view
-![logout](https://github.com/m-khezri/rhino-splits/blob/master/src/images/08.JPG)
+![logout](src/images/08.JPG)
 
 ## Technologies Used
 * React
