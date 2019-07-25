@@ -1,68 +1,70 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Rhino Splits
 
-## Available Scripts
+Rhino Splits is my Front-End capstopne projects at NSS. This is online payment simulator that users can sign in with Google account and create a new friend or contact. User is able to edit and delete the current user as well as make a payment to a friend. I'm planing to keep working on this project and add reminder and sending notification for frineds who are supposed to pay you back. 
 
-In the project directory, you can run:
+* Live Demo:
+https://rhino-splits.firebaseapp.com
 
-### `npm start`
+
+## Screenshots
+
+### Authentication view
+![Login page](src/images/01.jpg)
+
+### Home page view
+![Home page](src/images/02.jpg)
+
+### Create a new contact
+![Login page](src/images/03.jpg)
+
+### Created a new contact
+![Login page](src/images/04.jpg)
+
+### Edit / Delete / make a payment
+![Login page](src/images/05.jpg)
+
+### Make a payment
+![Login page](src/images/06.jpg)
+
+### Transaction histoty
+![Login page](src/images/07.jpg)
+
+### Logout view
+![Login page](src/images/08.jpg)
+
+## Technologies Used
+* React
+* Sass
+* Axios
+* Reactstrap
+* Bootstrap
+* Prop-Types
+* Materialize
+* SweetAlert
+* Google Fonts
+
+
+## How to run this app
+Note: To run this app you will need a firebase account and a new project.
+
+### 1. Configure Firebase
+1. Clone the repository to your local machine.
+2. Run the following command in terminal to download the web dependencies: `npm install`
+3. In the db folder, rename apiKeys.json.example to apiKeys.json.
+4. In Firebase, create a new project.
+5. Navigate to your config object, and copy the keys from Firebase into the apiKeys.json file.
+6. Create a realtime database in Firebase, and start in test mode.
+7. Navigate to the Data tab inside the realtime database, and import !base.json. You should now see sets of data titled Murals, Users, and Favorites.
+8. Click on Murals, and the import the murals.json file. Repeat for Users, and Favorites.
+9. Navigate to the Rules tab, and add the following rule:
+```
+    "users": {
+      ".indexOn": "uid"
+    },
+```
+
+### 2. Serve up the app
+#### `npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
