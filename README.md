@@ -9,7 +9,7 @@ https://rhino-splits.firebaseapp.com
 ## Screenshots
 
 ### Authentication view
-![Login page](src\images\01.jpg)
+![Login page](./src/images/01.jpg)
 
 ### Home page view
 ![Home page](src/images/02.jpg)
