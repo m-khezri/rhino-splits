@@ -1,10 +1,10 @@
+
 # Rhino Splits
 
 Rhino Splits is my Front-End capstopne projects at NSS. This is online payment simulator that users can sign in with Google account and create a new friend or contact. User is able to edit and delete the current user as well as make a payment to a friend. I'm planing to keep working on this project and add reminder and sending notification for frineds who are supposed to pay you back. 
 
 * Live Demo:
 https://rhino-splits.firebaseapp.com
-
 
 ## Screenshots
 
@@ -15,22 +15,22 @@ https://rhino-splits.firebaseapp.com
 ![Home page](src/images/02.jpg)
 
 ### Create a new contact
-![Login page](src/images/03.jpg)
+![create a new contact page](src/images/03.jpg)
 
 ### Created a new contact
-![Login page](src/images/04.jpg)
+![created contact](src/images/04.jpg)
 
 ### Edit / Delete / make a payment
-![Login page](src/images/05.jpg)
+![edit-delete-payment](src/images/05.jpg)
 
 ### Make a payment
-![Login page](src/images/06.jpg)
+![make a payment](src/images/06.jpg)
 
 ### Transaction histoty
-![Login page](src/images/07.jpg)
+![transaction](src/images/07.jpg)
 
 ### Logout view
-![Login page](src/images/08.jpg)
+![logout](src/images/08.jpg)
 
 ## Technologies Used
 * React
