@@ -12,7 +12,6 @@ import TransactionHistroy from '../components/TransactionsHistory/TransactionsHi
 import ContactsList from '../components/ContactsList/ContactsList';
 import NewContactForm from '../components/NewContactForm/NewContactForm';
 
-
 class App extends Component {
   state = {
     authed: false,
