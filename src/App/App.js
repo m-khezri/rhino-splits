@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.scss';
 import firebase from 'firebase/app';
 import 'firebase/auth';
-
 import connection from '../helpers/data/connection';
 import MyNavbar from '../components/MyNavar/MyNavbar';
 import authRequests from '../helpers/data/authRequests';
@@ -11,7 +10,6 @@ import transactionsRequests from '../helpers/data/transactionsRequests';
 import TransactionHistroy from '../components/TransactionsHistory/TransactionsHistory';
 import ContactsList from '../components/ContactsList/ContactsList';
 import NewContactForm from '../components/NewContactForm/NewContactForm';
-
 
 class App extends Component {
   state = {

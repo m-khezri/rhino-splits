@@ -13,7 +13,7 @@ class TransactionsItem extends React.Component {
 
   render() {
     return (
-      <div className='card-holder card bg-light shadow-sm rounded mx-3 my-0 p-1' >
+      <div className='card-holder card bg-light shadow-sm mx-3 my-0 p-1' >
         <div className="d-flex">
           <div className="w-25 text-left">
             <p className="my-auto">{this.props.transaction.date}</p>

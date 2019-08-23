@@ -1,9 +1,22 @@
 import React from 'react';
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Form,
+  FormGroup,
+  Label,
+  Col,
+  Input,
+}
+  from 'reactstrap';
 import './NewContactForm.scss';
 import PropTypes from 'prop-types';
 import authRequests from '../../helpers/data/authRequests';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Col, Input } from 'reactstrap';
 import friendsRequests from '../../helpers/data/friendsRequests';
+import SearchBar from '../SearchBar/SearchBar';
 
 const defaultContact = {
   name: '',
@@ -14,7 +27,6 @@ const defaultContact = {
 };
 
 class newContactForm extends React.Component {
-
   static propTypes = {
     onSubmit: PropTypes.func,
     isEditing: PropTypes.bool,
@@ -34,16 +46,20 @@ class newContactForm extends React.Component {
   }
 
   firstNameChange = e => this.formFieldStringState('name', e);
+
   lastNameChange = e => this.formFieldStringState('lastname', e);
+
   emailChange = e => this.formFieldStringState('email', e);
+
   phoneChange = e => this.formFieldStringState('phone', e);
 
 
   toggle() {
     this.setState(prevState => ({
-      modal: !prevState.modal
+      modal: !prevState.modal,
     }));
   }
+
   toggle = this.toggle.bind(this);
 
   formSubmit = (e) => {
@@ -70,6 +86,7 @@ class newContactForm extends React.Component {
   render() {
     const { newContact } = this.state;
     return (
+
       <div className="control-bar-container m-0">
         <div>
           <div className="d-flex">
@@ -78,9 +95,9 @@ class newContactForm extends React.Component {
                 <i className="mr-2 large material-icons">person_add</i>Add new friend
             </Button>
             </div>
-            {/* <div className="mx-5 w-25">
-              <input class="form-control form-control-lg" type="search" placeholder="Search" aria-label="Search" value={this.inputSearch} onKeyup={this.handleInputChange} />
-            </div> */}
+            <div className='w-50'>
+              <SearchBar />
+            </div>
 
           </div>
           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
